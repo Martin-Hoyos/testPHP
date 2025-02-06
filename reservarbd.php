@@ -1,16 +1,16 @@
 <?php
 session_start();
-require_once 'config.php';
 
-$nombre_cliente = isset($_SESSION['nombre_cliente']) ? $_SESSION['nombre_cliente'] : '';
-$apellidos_cliente = isset($_SESSION['apellidos_cliente']) ? $_SESSION['apellidos_cliente'] : '';
-$email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-$numero_telefono = isset($_SESSION['numero_telefono']) ? $_SESSION['numero_telefono'] : '';
+// Asigna valores usando el operador de fusión null para evitar warnings
+$lugar = $_GET['lugar'] ?? '';
+$fechaEntrada = $_GET['fechaEntrada'] ?? '';
+$fechaSalida = $_GET['fechaSalida'] ?? '';
+$id = $_GET['id'] ?? '';
 
-$lugar = $_GET['lugar'];
-$fechaEntrada = $_GET['fechaEntrada'];
-$fechaSalida = $_GET['fechaSalida'];
-$numero_habitacion = $_GET['id'];
+// Opcional: validar que los datos obligatorios se hayan recibido
+if (empty($lugar) || empty($fechaEntrada) || empty($fechaSalida) || empty($id)) {
+    die("Error: faltan parámetros requeridos.");
+}
 ?>
 
 <!DOCTYPE html>
