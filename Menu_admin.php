@@ -52,9 +52,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenido, en este panel encotraras las bases de datos y cambiarlas a tu conveniencia; ?></h1>
+        <h1>Bienvenido, en este panel encotraras las bases de datos y cambiarlas a tu conveniencia.</h1>
         <div class="button-container">
-            <button onclick="location.href='dashboard.php'">Habitaciones</button>
+            <button onclick="location.href='control_BD.php'">Habitaciones</button>
             <button onclick="location.href='profile.php'">Usuarios</button>
             <button onclick="location.href='settings.php'">Reseñas</button>
             <button onclick="location.href='Logout.php'">Cerrar Sesión</button>
