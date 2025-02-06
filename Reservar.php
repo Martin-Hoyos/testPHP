@@ -10,11 +10,11 @@
 <body class="bg-gray-100 font-roboto">
 <header class="hidden-header">
     <div class="logo">
-        <h1><a href="Index.html"><img src="Multimedia/logo_BELLAVIST_blanco.png" alt="LogoMenu"></a></h1>
+        <h1><a href="index.php"><img src="Multimedia/logo_BELLAVIST_blanco.png" alt="LogoMenu"></a></h1>
     </div>
     <nav>
         <ul>
-            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="index.php">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
