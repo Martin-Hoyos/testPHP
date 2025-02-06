@@ -36,7 +36,7 @@ session_start();
                     <span>Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
                 </li>
                 <li>
-                    <a href="logout.php">Cerrar Sesión</a>
+                    <a href="Logout.php">Cerrar Sesión</a>
                 </li>
             <?php else: ?>
                 <li>
