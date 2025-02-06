@@ -20,6 +20,15 @@ if (isset($_GET['success'])) {
 <form action="includes/procesar_reserva.php" method="POST">
     <input type="hidden" name="numero_habitacion" value="<?php echo $_GET['id']; ?>">
 
+    <label>Lugar</label>
+    <input type="text" name="lugar" value="<?php echo $_GET['lugar']; ?>" readonly>
+
+    <label>Fecha Entrada</label>
+    <input type="date" name="fecha_entrada" value="<?php echo $_GET['fechaEntrada']; ?>" readonly>
+
+    <label>Fecha Salida</label>
+    <input type="date" name="fecha_salida" value="<?php echo $_GET['fechaSalida']; ?>" readonly>
+
     <label>Nombre</label>
     <input type="text" name="nombre_cliente" required>
 
@@ -31,15 +40,6 @@ if (isset($_GET['success'])) {
 
     <label>Teléfono</label>
     <input type="text" name="numero_telefono" required>
-
-    <label>Fecha Entrada</label>
-    <input type="date" name="fecha_entrada" required>
-
-    <label>Fecha Salida</label>
-    <input type="date" name="fecha_salida" required>
-
-    <label>Lugar</label>
-    <input type="text" name="lugar" value="<?php echo $_GET['lugar']; ?>" readonly>
 
     <button type="submit">Confirmar Reserva</button>
 </form>
