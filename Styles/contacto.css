@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../fotos/foto1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.texto-hero {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.hidden-header {
+    background: linear-gradient(to bottom, #0c1401, rgba(12, 20, 1, 0)); /* Degradado de verde a transparente */
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 100px;
+    display: flex; /* Lo hacemos visible siempre */
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Cambiar la visibilidad por defecto */
+.hidden-header.visible {
+    display: flex; /* Aseguramos que se vea en todo momento */
+}
+
+.logo {
+    text-decoration: none;
+    color: inherit;
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+.logo-container img {
+    display: block;
+    height: 500px;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+}
+
+/* Hotel Section */
+.hotel {
+    width: 80%; /* Ajustamos el ancho de la sección del hotel */
+    margin: 50px auto; /* Centra el contenido */
+    background-color: #f4f4f4; /* Color de fondo para la sección */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Hotel Name */
+.hotel-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hotel-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Image */
+.hotel-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hotel-image {
+    width: 60%; /* Tamaño más pequeño de la imagen */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hotel Details (contact and map) */
+.hotel-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Contact Details */
+.contact-details {
+    width: 45%;
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Map */
+.map-container {
+    width: 45%;
+    height: 300px; /* Ajustamos la altura del mapa */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/*-----------------------------------------FOTOS HABITACIONES-------------------------------------------------------*/
+/* General Styles */
+
+/* Section Container */
+#fotos_imagenes .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 100px; /* Espacio entre columnas */
+}
+
+#fotos_imagenes .relative {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #0c1401;
+}
+
+#fotos_imagenes {
+    padding: 20px;
+}
+
+#fotos_imagenes .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#fotos_imagenes h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+#fotos_imagenes .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 50px; /* Espacio entre columnas */
+}
+
+#fotos_imagenes .relative {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#fotos_imagenes img {
+    width: 100%;
+    height: 600px; /* Ajusta la altura de las imágenes */
+    object-fit: cover; /* Asegura que las imágenes cubran el espacio */
+    border-radius: 8px 8px 0 0;
+}
+
+/* Overlay for Text */
+#fotos_imagenes .absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, #0c1401, rgba(10, 25, 4, 0));
+    color: white;
+    padding: 10px 15px;
+    border-radius: 0 0 8px 8px;
+}
+
+#fotos_imagenes .absolute h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#fotos_imagenes .absolute .flex {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Buttons */
+#fotos_imagenes button {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+#fotos_imagenes .bg-transparent {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+#fotos_imagenes .bg-transparent:hover {
+    background-color: white;
+    color: black;
+}
+
+#fotos_imagenes .bg-white {
+    background-color: white;
+    color: black;
+}
+
+#fotos_imagenes .bg-white:hover {
+    background-color: #0c1401;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #fotos_imagenes .grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    #fotos_imagenes .grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    #fotos_imagenes img {
+        height: 300px; /* Ajustar altura para pantallas pequeñas */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: azure;
+}
+
+/* Language Dropdown */
+#languageMenu {
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#languageMenu:hover {
+    background-color: #eaeaea;
+}
+
+/* Estilos para las imágenes de los hoteles */
+.hotel-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Sección de contacto con el mapa */
+.hotel-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px; /* Espacio interior */
+    background-color: #f4f4f4;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 10%;
+}
+
+.contact-details {
+    width: 70%;  /* Aumentamos aún más el ancho de la sección de contacto */
+    padding-left: 5%;  /* Agregamos margen a la izquierda para no estar pegado */
+}
+
+.contact-details p {
+    font-size: 26px; /* Tamaño de fuente más grande */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-details .social-icons a {
+    font-size: 45px;  /* Iconos más grandes */
+    margin-right: 30px; /* Mayor espacio entre iconos */
+    color: #333;
+}
+
+.contact-details .social-icons a:hover {
+    color: #3d405b;
+}
+
+.map-container {
+    width: 55%;  /* Aumentamos el ancho para hacerlo más grande */
+    height: 35vw;  /* Manteniendo la altura ajustada */
+    position: relative;
+    border-radius: 8px;
+    margin-left: -5%;  /* Desplazamos el mapa hacia la izquierda */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
