@@ -65,6 +65,8 @@
                 }
 
                 data.forEach(habitacion => {
+                    habitacion.nombre_habitacion = undefined;
+                    habitacion.precio_noche = undefined;
                     resultado.innerHTML += `
                 <div class='border p-4 rounded-lg shadow-md mb-4 bg-white'>
                     <img src="${habitacion.fotos}" alt="${habitacion.nombre_habitacion}" class='w-full h-40 object-cover rounded-md'>

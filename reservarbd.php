@@ -24,7 +24,7 @@ if (empty($lugar) || empty($fechaEntrada) || empty($fechaSalida) || empty($id)) 
 <body>
 <h2>Confirmar Reserva</h2>
 
-<form action="includes/procesar_reserva.php" method="POST">
+<form action="procesar_reserva.php" method="POST">
     <input type="hidden" name="numero_habitacion" value="<?= $numero_habitacion ?>">
     <input type="hidden" name="lugar" value="<?= $lugar ?>">
     <input type="hidden" name="fecha_entrada" value="<?= $fechaEntrada ?>">
