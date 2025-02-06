@@ -66,17 +66,22 @@
 
                 data.forEach(habitacion => {
                     resultado.innerHTML += `
-                <div class='border p-4 rounded-lg shadow-md mb-4'>
+                <div class='border p-4 rounded-lg shadow-md mb-4 bg-white'>
                     <img src="${habitacion.fotos}" alt="${habitacion.nombre_habitacion}" class='w-full h-40 object-cover rounded-md'>
                     <h3 class='text-xl font-bold mt-2'>${habitacion.nombre_habitacion}</h3>
                     <p><strong>Personas:</strong> ${habitacion.numero_personas}</p>
                     <p><strong>Descripción:</strong> ${habitacion.descripcion}</p>
                     <p><strong>Precio:</strong> ${habitacion.precio_noche}€ por noche</p>
+                    <a href="reservarbd.php?habitacion=${habitacion.id}&nombre=${habitacion.nombre_habitacion}&precio=${habitacion.precio_noche}"
+                        class="block bg-black text-white text-center py-2 px-4 rounded mt-3">
+                        Reservar
+                    </a>
                 </div>`;
                 });
             })
             .catch(error => console.error('Error:', error));
     });
+
 </script>
 </body>
 </html>

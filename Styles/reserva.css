@@ -161,6 +161,7 @@ button:hover span:after {
 #buscarHabitaciones button:hover {
     background-color: #2c2e38;
 }
+{
     transition: border-color 0.3s ease;
 }
 
@@ -171,7 +172,7 @@ button:hover span:after {
 }
 
 #buscarHabitaciones button {
-    background-color: #803ba5;
+    background-color: #3d405b;
     color: #FFFFFF;
     text-align: center;
     font-size: 17px;
