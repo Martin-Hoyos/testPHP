@@ -41,4 +41,4 @@ try {
     echo json_encode(["error" => "Error al eliminar el registro: " . $e->getMessage()]);
 }
 exit;
-?>
+
