@@ -115,40 +115,42 @@ button:hover span:after {
 #buscarHabitaciones {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+    gap: 20px;
+    justify-content: space-between;
     background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 100px; /* Ajusta según la altura de tu header fijo */
+    margin: 120px auto 40px;  /* Considera el header fijo */
+    max-width: 800px;
 }
 
 #buscarHabitaciones select,
 #buscarHabitaciones input[type="date"] {
-    padding: 0.5rem 1rem;
+    width: 30%;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    outline: none;
     transition: border-color 0.3s ease;
 }
 
 #buscarHabitaciones select:focus,
 #buscarHabitaciones input[type="date"]:focus {
     border-color: #3d405b;
+    outline: none;
 }
 
 #buscarHabitaciones button {
     background-color: #3d405b;
-    color: #fff;
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s;
 }
 
 #buscarHabitaciones button:hover {
