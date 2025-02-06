@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $_SESSION['usuario'] = $email;
         $_SESSION['nombre'] = $row['nombre'];
-        header("Location: Menu_administrador.php"); // Redirige a la página principal (asegúrate de que la extensión sea .php)
+        header("Location: menu_admin.php"); // Redirige a la página principal (asegúrate de que la extensión sea .php)
         exit();
     } else {
         echo "<script>alert('Por favor dejar de intentar si no tiene cuenta administrador.'); window.location.href='admin_login.html';</script>";
