@@ -1,4 +1,5 @@
 <?php
+session_start(); // Iniciar sesión para almacenar datos del usuario
 $host = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
 $dbname = "bew3kbjtj9n5faq31kla";
 $username = "ueaxccosiwgfnuo5";
@@ -15,6 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lugar = $_POST['lugar'] ?? null;
     $fechaEntrada = $_POST['fechaEntrada'] ?? null;
     $fechaSalida = $_POST['fechaSalida'] ?? null;
+
+    // Guardar los datos del usuario en sesión para no pedirlos dos veces
+    $_SESSION['nombre_cliente'] = $_POST['nombre_cliente'] ?? '';
+    $_SESSION['apellidos_cliente'] = $_POST['apellidos_cliente'] ?? '';
+    $_SESSION['email'] = $_POST['email'] ?? '';
+    $_SESSION['numero_telefono'] = $_POST['numero_telefono'] ?? '';
 
     if (!$lugar || !$fechaEntrada || !$fechaSalida) {
         echo json_encode(["error" => "Por favor, ingrese todos los campos."]);
@@ -44,4 +51,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
     exit;
 }
-?>
+

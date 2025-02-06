@@ -1,3 +1,18 @@
+<?php
+session_start();
+require_once 'config.php';
+
+$nombre_cliente = isset($_SESSION['nombre_cliente']) ? $_SESSION['nombre_cliente'] : '';
+$apellidos_cliente = isset($_SESSION['apellidos_cliente']) ? $_SESSION['apellidos_cliente'] : '';
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+$numero_telefono = isset($_SESSION['numero_telefono']) ? $_SESSION['numero_telefono'] : '';
+
+$lugar = $_GET['lugar'];
+$fechaEntrada = $_GET['fechaEntrada'];
+$fechaSalida = $_GET['fechaSalida'];
+$numero_habitacion = $_GET['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,37 +24,23 @@
 <body>
 <h2>Confirmar Reserva</h2>
 
-<?php
-if (isset($_GET['success'])) {
-    echo "<p class='text-green-500'>Reserva realizada con éxito.</p>";
-} elseif (isset($_GET['error'])) {
-    echo "<p class='text-red-500'>Error al reservar, inténtalo de nuevo.</p>";
-}
-?>
-
 <form action="includes/procesar_reserva.php" method="POST">
-    <input type="hidden" name="numero_habitacion" value="<?php echo $_GET['id']; ?>">
-
-    <label>Lugar</label>
-    <input type="text" name="lugar" value="<?php echo $_GET['lugar']; ?>" readonly>
-
-    <label>Fecha Entrada</label>
-    <input type="date" name="fecha_entrada" value="<?php echo $_GET['fechaEntrada']; ?>" readonly>
-
-    <label>Fecha Salida</label>
-    <input type="date" name="fecha_salida" value="<?php echo $_GET['fechaSalida']; ?>" readonly>
+    <input type="hidden" name="numero_habitacion" value="<?= $numero_habitacion ?>">
+    <input type="hidden" name="lugar" value="<?= $lugar ?>">
+    <input type="hidden" name="fecha_entrada" value="<?= $fechaEntrada ?>">
+    <input type="hidden" name="fecha_salida" value="<?= $fechaSalida ?>">
 
     <label>Nombre</label>
-    <input type="text" name="nombre_cliente" required>
+    <input type="text" name="nombre_cliente" value="<?= $nombre_cliente ?>" readonly>
 
     <label>Apellidos</label>
-    <input type="text" name="apellidos_cliente" required>
+    <input type="text" name="apellidos_cliente" value="<?= $apellidos_cliente ?>" readonly>
 
     <label>Email</label>
-    <input type="email" name="email" required>
+    <input type="email" name="email" value="<?= $email ?>" readonly>
 
     <label>Teléfono</label>
-    <input type="text" name="numero_telefono" required>
+    <input type="text" name="numero_telefono" value="<?= $numero_telefono ?>" readonly>
 
     <button type="submit">Confirmar Reserva</button>
 </form>
