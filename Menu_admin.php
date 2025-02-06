@@ -85,6 +85,20 @@ try {
         .header-buttons button:hover {
             background-color: #45a049;
         }
+        /* Estilo para el botón de eliminar en cada fila */
+        .delete-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
     </style>
 </head>
 <body>
@@ -108,12 +122,13 @@ try {
         <th>Precio por Noche</th>
         <th>Ubicación</th>
         <th>Foto</th>
+        <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
     <?php if (!empty($habitaciones)): ?>
         <?php foreach ($habitaciones as $habitacion): ?>
-            <tr>
+            <tr id="row-<?= htmlspecialchars($habitacion['numero_habitacion']) ?>">
                 <td><?= htmlspecialchars($habitacion['numero_habitacion']) ?></td>
                 <td><?= htmlspecialchars($habitacion['nombre_habitacion']) ?></td>
                 <td><?= htmlspecialchars($habitacion['numero_personas']) ?></td>
@@ -121,15 +136,52 @@ try {
                 <td>$<?= number_format($habitacion['precio_noche'], 2) ?></td>
                 <td><?= htmlspecialchars($habitacion['lugar']) ?></td>
                 <td><img src="<?= htmlspecialchars($habitacion['fotos']) ?>" alt="Foto de la habitación"></td>
+                <td>
+                    <!-- Botón de eliminar que llama a la función JavaScript -->
+                    <button class="delete-btn" onclick="eliminarHabitacion(<?= htmlspecialchars($habitacion['numero_habitacion']) ?>, this)">Eliminar</button>
+                </td>
             </tr>
         <?php endforeach; ?>
     <?php else: ?>
         <tr>
-            <td colspan="7" style="text-align: center;">No hay habitaciones disponibles.</td>
+            <td colspan="8" style="text-align: center;">No hay habitaciones disponibles.</td>
         </tr>
     <?php endif; ?>
     </tbody>
 </table>
+
+<script>
+    function eliminarHabitacion(numeroHabitacion, btn) {
+        if (confirm("¿Está seguro que desea eliminar la habitación " + numeroHabitacion + "?")) {
+            // Preparar los datos para enviar por POST
+            var formData = new FormData();
+            formData.append("numero_habitacion", numeroHabitacion);
+
+            // Enviar la petición AJAX a eliminar_ajax.php
+            fetch("eliminar_ajax.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success) {
+                        alert(data.success);
+                        // Eliminar la fila de la tabla sin recargar la página
+                        var row = btn.parentNode.parentNode;
+                        row.parentNode.removeChild(row);
+                    } else if(data.error) {
+                        alert(data.error);
+                    } else {
+                        alert("Error desconocido.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Ocurrió un error al intentar eliminar la habitación.");
+                });
+        }
+    }
+</script>
 
 </body>
 </html>
