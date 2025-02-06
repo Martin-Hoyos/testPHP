@@ -24,9 +24,9 @@ session_start();
     <nav>
         <ul>
             <li><a href="Index.php">Inicio</a></li>
-            <li><a href="servicios.php">Servicios</a></li>
-            <li><a href="Habitaciones.php">Habitaciones</a></li>
-            <li><a href="Contacto.php">Contáctanos</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Habitaciones.html">Habitaciones</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
             <li>
                 <button><span><a href="Reservar.php">Reservar</a></span></button>
             </li>
