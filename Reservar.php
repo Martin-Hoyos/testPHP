@@ -8,6 +8,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body class="bg-gray-100 font-roboto">
+<header class="hidden-header">
+    <div class="logo">
+        <h1><a href="Index.html"><img src="Multimedia/logo_BELLAVIST_blanco.png" alt="LogoMenu"></a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Habitaciones.html">Habitaciones</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+            <li>
+                <button><span><a href="reservar.jsp">Reservar</a></span></button>
+            </li>
+        </ul>
+    </nav>
+</header>
 <div class="container mx-auto p-4">
     <h2 class="text-2xl font-bold text-gray-700 text-center">Reserva de Habitaciones</h2>
     <form id="buscarHabitaciones" class="mt-4">

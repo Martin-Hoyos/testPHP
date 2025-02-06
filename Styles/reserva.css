@@ -4,17 +4,20 @@ body {
     background-color: #f9f9f9;
 }
 .hidden-header {
-    background-color: #0c1401;
-    color: black;
-    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #0c1401, rgba(12, 20, 1, 0));
+    color: white;
+    padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 90px;
-    opacity: 0.95;
+    height: 80px;
 }
+
 header div {
     margin-top: -20px;
 }
