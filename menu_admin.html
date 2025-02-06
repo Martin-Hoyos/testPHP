@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Control</title>
+</head>
+<body>
+
+<?php if (isset($_SESSION['usuario'])): ?>
+<li>
+  <span>Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
+</li>
+<li>
+  <a href="Logout.php">Cerrar Sesión</a>
+</li>
+?>
+</body>
+</html>
