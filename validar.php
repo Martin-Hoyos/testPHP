@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $_SESSION['usuario'] = $email;
         $_SESSION['nombre'] = $row['nombre']; // Guarda el nombre obtenido de la BD
-        header("Location: index.php"); // Redirige a la página principal (asegúrate de que la extensión sea .php)
+        header("Location: Index.php"); // Redirige a la página principal (asegúrate de que la extensión sea .php)
         exit();
     } else {
         echo "<script>alert('Correo o contraseña incorrectos.'); window.location.href='Login.html';</script>";
