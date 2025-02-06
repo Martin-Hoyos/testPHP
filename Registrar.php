@@ -52,7 +52,7 @@ $insertStmt->execute([$nombre, $email, $contrasenia, $telefono]);
 
 if ($insertStmt->rowCount() > 0) {
     // Registro exitoso, redirige a la página de inicio de sesión
-    header("Location: Login.php");
+    header("Location: Login.html");
     exit;
 } else {
     // Si no se pudo insertar, redirige a la página de registro con un mensaje de error
