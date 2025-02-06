@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Din�mico</title>
+  <title>Login Dinámico</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-screen flex items-center justify-center bg-gray-100">
 
+<!-- Enlace fijo para el administrador en la esquina superior derecha -->
+<a href="adminLogin.php" class="fixed top-4 right-4 text-sm text-blue-500 hover:underline">
+  Entrar como Administrador
+</a>
+
 <div class="flex w-full h-full">
-  <!-- Video Section -->
+  <!-- Sección de Video -->
   <div class="w-1/2 h-full hidden md:flex items-center justify-center bg-blue-500">
     <video class="w-full h-full object-cover" autoplay loop muted>
       <source src="Multimedia/video.mp4" type="video/mp4">
@@ -17,11 +22,11 @@
     </video>
   </div>
 
-  <!-- Form Section -->
+  <!-- Sección de Formularios -->
   <div class="w-full md:w-1/2 h-full flex items-center justify-center bg-white">
     <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
 
-      <!-- LOGIN FORM -->
+      <!-- FORMULARIO DE LOGIN -->
       <div id="loginForm">
         <h2 class="text-2xl font-bold text-center mb-6">Sign In</h2>
         <form action="validar.php" method="post">
@@ -37,13 +42,12 @@
             Login
           </button>
         </form>
-
         <p class="text-center text-gray-600 mt-4">
           Don't have an account? <a href="#" class="text-blue-500 hover:underline" onclick="toggleForms()">Sign Up</a>
         </p>
       </div>
 
-      <!-- SIGN UP FORM -->
+      <!-- FORMULARIO DE SIGN UP -->
       <div id="signUpForm" class="hidden">
         <h2 class="text-2xl font-bold text-center mb-6">Sign Up</h2>
         <form action="Registrar.php" method="post">
@@ -70,14 +74,18 @@
         <p class="text-center text-gray-600 mt-4">
           Already have an account? <a href="#" class="text-blue-500 hover:underline" onclick="toggleForms()">Sign In</a>
         </p>
+      </div>
 
+      <script>
+        function toggleForms() {
+          document.getElementById("loginForm").classList.toggle("hidden");
+          document.getElementById("signUpForm").classList.toggle("hidden");
+        }
+      </script>
 
-<script>
-  function toggleForms() {
-    document.getElementById("loginForm").classList.toggle("hidden");
-    document.getElementById("signUpForm").classList.toggle("hidden");
-  }
-</script>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <!-- Vincula el CSS externo -->
+  <link rel="stylesheet" href="Styles/admin_login.css">
+  <!-- Fuente externa -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Opcional: Tailwind CSS para algunos utilitarios -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="container">
+  <!-- Sección del video (se mostrará en pantallas grandes) -->
+  <div class="video-section">
+    <video autoplay loop muted>
+      <source src="Multimedia/video.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+  <!-- Sección del formulario de administrador -->
+  <div class="form-section">
+    <div class="form-wrapper">
+      <h2>Admin Login</h2>
+      <form action="admin_login.php" method="post">
+        <div class="input-group">
+          <label for="correo">Correo</label>
+          <input type="email" name="correo" id="correo" placeholder="admin@ejemplo.com" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="********" required>
+        </div>
+        <button type="submit" class="btn btn-login">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
