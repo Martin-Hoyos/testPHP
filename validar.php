@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $_SESSION['usuario'] = $email;
-        header("Location: dashboard.php"); // Página después del login
+        header("Location: Index.html"); // Página después del login
     } else {
-        echo "<script>alert('Correo o contraseña incorrectos.'); window.location.href='hola.html';</script>";
+        echo "<script>alert('Correo o contraseña incorrectos.'); window.location.href='Login.html.html';</script>";
     }
     $stmt->close();
 }
