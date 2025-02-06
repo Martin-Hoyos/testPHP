@@ -1,8 +1,13 @@
+/* General */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
 }
+
+/* Header Styles */
 .hidden-header {
     display: flex;
     justify-content: space-between;
@@ -16,34 +21,42 @@ body {
     right: 0;
     z-index: 1000;
     height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
 }
 
-header div {
-    margin-top: -20px;
-}
+/* Logo Styles */
 .logo img {
     display: block;
     height: 50px;
     position: relative;
     z-index: 2;
 }
+
+/* Navigation Styles */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
+
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
+
 nav ul li a {
     color: rgb(216, 216, 216);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
+
 nav ul li a:hover {
     text-decoration: underline;
+    color: #ffffff; /* Highlight links on hover */
 }
+
+/* Button Styles */
 button {
     border-radius: 4px;
     background-color: #3d405b;
@@ -53,11 +66,14 @@ button {
     width: 130px;
     transition: all 0.5s;
     cursor: pointer;
+    border: none;
 }
+
 button span {
     position: relative;
     transition: 0.5s;
 }
+
 button span:after {
     content: '»';
     position: absolute;
@@ -65,42 +81,34 @@ button span:after {
     right: -15px;
     transition: 0.5s;
 }
+
 button:hover span {
     padding-right: 15px;
 }
+
 button:hover span:after {
     opacity: 1;
     right: 0;
 }
-.form-group select, .form-group input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-.habitaciones-container {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.habitacion-item {
-    background-color: #fff;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-}
-.habitacion-item:hover {
-    background-color: #f0f0f0;
-}
-.habitacion-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-right: 20px;
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hidden-header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .logo img {
+        height: 40px;
+    }
 }
