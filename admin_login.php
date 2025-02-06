@@ -12,18 +12,18 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['correo'];
+    $correo = $_POST['correo'];
     $contrasenia = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM Administrador WHERE email = ? AND contrasenia = ?");
-    $stmt->bind_param("ss", $email, $contrasenia);
+    $stmt = $conn->prepare("SELECT * FROM Administrador WHERE correo = ? AND contrasenia = ?");
+    $stmt->bind_param("ss", $correo, $contrasenia);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // Se obtiene la información del usuario
         $row = $result->fetch_assoc();
-        $_SESSION['usuario'] = $email;
+        $_SESSION['usuario'] = $correo;
         $_SESSION['nombre'] = $row['nombre'];
         header("Location: menu_admin.php"); // Redirige a la página principal (asegúrate de que la extensión sea .php)
         exit();
