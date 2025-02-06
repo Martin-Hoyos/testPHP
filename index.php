@@ -16,14 +16,14 @@ session_start();
 <header class="hidden-header">
     <div class="logo">
         <h1>
-            <a href="Index.php">
+            <a href="index.php">
                 <img src="Multimedia/logo_BELLAVIST_blanco.png" alt="LogoMenu">
             </a>
         </h1>
     </div>
     <nav>
         <ul>
-            <li><a href="Index.php">Inicio</a></li>
+            <li><a href="index.php">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
