@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 $servername = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
 $username = "ueaxccosiwgfnuo5";
@@ -22,8 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
+        // Se obtiene la información del usuario
+        $row = $result->fetch_assoc();
         $_SESSION['usuario'] = $email;
-        header("Location: Index.html"); // Página después del login
+        $_SESSION['nombre'] = $row['nombre']; // Guarda el nombre obtenido de la BD
+        header("Location: Index.php"); // Redirige a la página principal (asegúrate de que la extensión sea .php)
+        exit();
     } else {
         echo "<script>alert('Correo o contraseña incorrectos.'); window.location.href='Login.html';</script>";
     }
@@ -31,5 +34,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-
-?>
