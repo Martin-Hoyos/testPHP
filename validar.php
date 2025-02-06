@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['usuario'] = $email;
         header("Location: Index.html"); // Página después del login
     } else {
-        echo "<script>alert('Correo o contraseña incorrectos.'); window.location.href='Login.html.html';</script>";
+        echo "<script>alert('Correo o contraseña incorrectos.'); window.location.href='Login.html';</script>";
     }
     $stmt->close();
 }
