@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+.hidden-header {
+    background-color: #0c1401;
+    color: black;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 90px;
+    opacity: 0.95;
+}
+header div {
+    margin-top: -20px;
+}
+.logo img {
+    display: block;
+    height: 50px;
+    position: relative;
+    z-index: 2;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: rgb(216, 216, 216);
+    text-decoration: none;
+    font-size: 20px;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+button {
+    border-radius: 4px;
+    background-color: #3d405b;
+    color: #fff;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+button span {
+    position: relative;
+    transition: 0.5s;
+}
+button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+button:hover span {
+    padding-right: 15px;
+}
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.form-group select, .form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.habitaciones-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.habitacion-item {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+.habitacion-item:hover {
+    background-color: #f0f0f0;
+}
+.habitacion-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 20px;
+}
