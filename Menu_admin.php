@@ -51,21 +51,15 @@
     </style>
 </head>
 <body>
-<?php if (isset($_SESSION['usuario'])): ?>
     <div class="container">
-        <h1>Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?></h1>
+        <h1>Bienvenido, en este panel encotraras las bases de datos y cambiarlas a tu conveniencia; ?></h1>
         <div class="button-container">
-            <button onclick="location.href='dashboard.php'">Dashboard</button>
-            <button onclick="location.href='profile.php'">Perfil</button>
-            <button onclick="location.href='settings.php'">Configuración</button>
+            <button onclick="location.href='dashboard.php'">Habitaciones</button>
+            <button onclick="location.href='profile.php'">Usuarios</button>
+            <button onclick="location.href='settings.php'">Reseñas</button>
             <button onclick="location.href='Logout.php'">Cerrar Sesión</button>
         </div>
     </div>
-<?php else: ?>
-    <div class="container">
-        <h1>No has iniciado sesión</h1>
-        <button onclick="location.href='Login.php'">Iniciar Sesión</button>
-    </div>
-<?php endif; ?>
+
 </body>
 </html>
