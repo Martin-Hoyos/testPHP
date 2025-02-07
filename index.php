@@ -54,7 +54,7 @@ session_start();
             <div class="background"></div>
             <img src="Multimedia/BELLAVISTA_LOGO_BLANCO.png" alt="logoHero">
         </div>
-        <button class="putobotonreservar"><span><a href="reservar.jsp">Reservar</a></span></button>
+        <button class="putobotonreservar"><span><a href="Registrar.php">Reservar</a></span></button>
     </section>
     <section>
         <!-- Contenido adicional -->
@@ -142,7 +142,7 @@ session_start();
 
                             </button>
                             <button id="foto-Reservar-ahora" class="bg-white text-black py-1 px-4">
-                                <a href="reservar.jsp" >Reservar ahora</a>
+                                <a href="Reservar.php" >Reservar ahora</a>
                             </button>
                         </div>
                     </div>
@@ -166,7 +166,7 @@ session_start();
 
                             </button>
                             <button id="foto-Reservar-ahora" class="bg-white text-black py-1 px-4">
-                                <a href="reservar.jsp">Reservar ahora</a>
+                                <a href="Reservar.php">Reservar ahora</a>
                             </button>
                         </div>
                     </div>
@@ -189,7 +189,7 @@ session_start();
                                 <a href="..Habitaciones/suitekingbalcon.jsp" id="foto-Vista-Rapida">Vista rápida</a>
                             </button>
                             <button id="foto-Reservar-ahora" class="bg-white text-black py-1 px-4">
-                                <a href="reservar.jsp">Reservar ahora</a>
+                                <a href="Reservar.php">Reservar ahora</a>
                             </button>
                         </div>
                     </div>
