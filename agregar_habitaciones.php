@@ -1,7 +1,5 @@
 <?php
-// agregarHabitacion.php
 
-// Si se envía el formulario (método POST), procesamos la inserción
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Configuración de la conexión a la base de datos
@@ -130,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         ?>
     </div>
-    <form action="agregarHabitacion.php" method="post">
+    <form action="agregar_habitaciones.php" method="post">
         <label for="numero_habitacion">Número de Habitación</label>
         <input type="number" name="numero_habitacion" id="numero_habitacion" placeholder="Ingrese el número (opcional o requerido según tu BD)">
 
