@@ -158,7 +158,7 @@ try {
             formData.append("numero_habitacion", numeroHabitacion);
 
             // Enviar la petición AJAX a eliminar_ajax.php
-            fetch("eliminar_ajax.php", {
+            fetch("eliminar.php", {
                 method: "POST",
                 body: formData
             })
