@@ -326,10 +326,15 @@ body {
 }
 
 /* Evita que cambie la tipografía/tamaño general del widget */
+/* ========== FORZAR LAYOUT VERTICAL DEL WIDGET DE GOOGLE TRANSLATE ========== */
 .goog-te-gadget {
-    font-size: 0 !important;
-    line-height: 0 !important;
+    display: flex !important;       /* Fuerza flexbox */
+    flex-direction: column !important; /* Coloca los elementos en columna */
+    align-items: center !important; /* Centra horizontalmente */
+    justify-content: center !important; /* Centra verticalmente */
+    gap: 8px !important;           /* Espacio entre la etiqueta y el combo */
 }
+
 
 /* Ajusta el estilo del combo de selección de idioma */
 .goog-te-gadget .goog-te-combo {
