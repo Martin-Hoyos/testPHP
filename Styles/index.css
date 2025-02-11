@@ -7,7 +7,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
+/* Ajusta el diseño del selector de idioma */
+#google_translate_element select {
+    background: #ffffff;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 14px;
+}
 /* Header oculto inicialmente */
 .hero {
     background-image: url('../Multimedia/foto1.png');
