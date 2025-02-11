@@ -28,12 +28,15 @@ session_start();
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
 
+            <!-- Traductor centrado -->
+            <li style="flex-grow: 1; text-align: center;">
                 <div id="google_translate_element"></div>
+            </li>
 
             <li>
                 <button><span><a href="Reservar.php">Reservar</a></span></button>
             </li>
-            <!-- Aquí se muestra el enlace de login o el nombre del usuario según la sesión -->
+
             <?php if (isset($_SESSION['usuario'])): ?>
                 <li>
                     <span>Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
@@ -45,7 +48,6 @@ session_start();
                 <li>
                     <a href="Login.html">Iniciar Sesión</a>
                 </li>
-
             <?php endif; ?>
         </ul>
     </nav>
