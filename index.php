@@ -28,6 +28,9 @@ session_start();
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
             <li>
+                <div id="google_translate_element"></div>
+            </li>
+            <li>
                 <button><span><a href="Reservar.php">Reservar</a></span></button>
             </li>
             <!-- Aquí se muestra el enlace de login o el nombre del usuario según la sesión -->
@@ -42,6 +45,7 @@ session_start();
                 <li>
                     <a href="Login.html">Iniciar Sesión</a>
                 </li>
+
             <?php endif; ?>
         </ul>
     </nav>
@@ -330,6 +334,15 @@ session_start();
             header.classList.remove('visible');
         }
     });
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',
+            includedLanguages: 'es,en,it,fr,ru,ar,ja,ko,hi',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
 </script>
 </body>
 </html>
