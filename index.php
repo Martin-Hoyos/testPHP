@@ -30,7 +30,7 @@ session_start();
 
             <!-- Traductor centrado -->
             <li style="flex-grow: 1; text-align: center;">
-                <div id="google_translate_element"></div>
+                <div id="google_translate_element">a</div>
             </li>
 
             <li>
