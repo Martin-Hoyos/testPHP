@@ -205,7 +205,7 @@ session_start();
             <!-- About Us Section -->
             <div class="w-full md:w-1/4 mb-6 md:mb-0">
                 <h2 class="text-xl font-bold mb-4">
-                    QUIÉNES SOMOS
+                    Quiénes somos
                 </h2>
                 <p class="text-gray-400">
                     En nuestro hotel, estamos comprometidos con el planeta y el futuro el lujo y la sostenibilidad.
