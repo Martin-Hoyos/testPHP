@@ -10,15 +10,40 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-    <script type="text/javascript">
+    <script>
+        // Esta función la llama automáticamente el script de Google al inicializarse
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'es',
                 includedLanguages: 'es,en,it,fr,ru,ar,ja,ko,hi',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
+
+            // Re-aplicar el idioma guardado (si existe)
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang) {
+                // Esperamos un breve tiempo para que se cargue el traductor
+                setTimeout(() => {
+                    const combo = document.querySelector('.goog-te-combo');
+                    if (combo) {
+                        combo.value = savedLang;      // Seleccionamos el idioma guardado
+                        combo.dispatchEvent(new Event('change')); // Disparamos el cambio
+                    }
+                }, 500);
+            }
         }
+
+        // Detectar cuando el usuario cambia el idioma en el combo
+        document.addEventListener('change', function(e) {
+            if (e.target && e.target.classList.contains('goog-te-combo')) {
+                const selectedLang = e.target.value;
+                localStorage.setItem('selectedLanguage', selectedLang);
+            }
+        });
     </script>
+
+    <!-- Script oficial de Google Translate -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <body>
