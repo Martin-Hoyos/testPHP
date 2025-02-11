@@ -24,12 +24,11 @@ session_start();
     </div>
     <nav>
         <ul>
-            <div id="google_translate_element"></div>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
-
+                <div id="google_translate_element"></div>
             <li>
                 <button><span><a href="Reservar.php">Reservar</a></span></button>
             </li>
