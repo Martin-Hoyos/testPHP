@@ -29,8 +29,8 @@ session_start();
             <li><a href="Contacto.html">Contáctanos</a></li>
 
             <!-- Traductor centrado -->
-            <li style="flex-grow: 1; text-align: center;">
-                <div id="google_translate_element">a</div>
+            <li style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+                <div id="google_translate_element"></div>
             </li>
 
             <li>
