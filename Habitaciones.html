@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>BELLAVISTA</title>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <link rel="stylesheet" href="Styles/habitaciones.css">
 <script src="https://cdn.tailwindcss.com"> </script>
@@ -21,6 +22,7 @@
       <li><a href="servicios.html">Servicios</a></li>
       <li><a href="Habitaciones.html">Habitaciones</a></li>
       <li><a href="Contacto.html">Contáctanos</a></li>
+      <div id="google_translate_element"></div>
       <li>
         <button><span><a href="Reservar.php">Reservar</a></span></button>
       </li>
@@ -236,6 +238,15 @@
       header.classList.remove('visible');
     }
   });
+</script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en,it,fr,ru,ar,ja,ko,hi',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
 </script>
 </body>
 </html>
