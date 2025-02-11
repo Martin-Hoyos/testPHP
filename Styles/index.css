@@ -39,27 +39,24 @@ body {
 /* Botón Reservar */
 .putobotonreservar {
     background-color: transparent; /* Fondo transparente */
-    border: 2px solid white; /* Borde blanco */
-    color: white; /* Color del texto */
-    font-size: 18px; /* Tamaño del texto */
-    padding: 12px 30px; /* Espaciado interno */
-    border-radius: 25px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor a "mano" */
-    transition: all 0.3s ease; /* Transición para hover */
-    position: absolute; /* Centrado en el hero */
-    bottom: 20%; /* Ajusta la posición vertical */
+    border: 2px solid white;       /* Borde blanco */
+    color: white;                  /* Color del texto */
+    font-size: 18px;               /* Tamaño del texto */
+    padding: 12px 30px;            /* Espaciado interno */
+    border-radius: 25px;           /* Bordes redondeados */
+    cursor: pointer;               /* Cambia el cursor a "mano" */
+    transition: all 0.3s ease;     /* Transición para hover */
+    position: absolute;            /* Centrado en el hero */
+    bottom: 20%;                   /* Ajusta la posición vertical */
     z-index: 8;
-
 }
-
 
 /* Efecto Hover */
 .putobotonreservar:hover {
-    background-color:rgba(255, 255, 255); /* Fondo blanco o */
-    color: rgba(0, 0 ,0); /* color del texto */
-    transform: scale(1.3); /* Aumenta ligeramente el tamaño */
+    background-color: rgba(255, 255, 255); /* Fondo blanco */
+    color: rgba(0, 0, 0);                  /* color del texto */
+    transform: scale(1.3);                 /* Aumenta ligeramente el tamaño */
 }
-
 
 .hidden-header {
     display: none;
@@ -73,9 +70,6 @@ body {
     z-index: 1000;
     height: 100px;
 }
-
-
-
 
 .hidden-header.visible {
     display: flex;
@@ -92,20 +86,20 @@ body {
     margin-top: 40px;
     margin-left: 60px;
 }
-/*
-.logo-container {
+
+/* .logo-container {
     position: relative;
     display: inline-block;
-}
-*/
+} */
+
 .logo-container img {
     display: block;
     height: 500px;
     position: relative;
     z-index: 1;
 }
-/*
-.logo-container .background {
+
+/* .logo-container .background {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -115,8 +109,8 @@ body {
     background-color: rgba(255, 255, 255, 0.982);
     z-index: 1;
     border-radius: 5px;
-}
-*/
+} */
+
 nav ul {
     list-style: none;
     margin: 0;
@@ -143,71 +137,8 @@ nav ul li a:hover {
     text-decoration: none; /* Opcional: puedes eliminar el subrayado al hacer hover */
 }
 
-
-/* Botón Reservar
-button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #3d405b;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 17px;
-    padding: 16px;
-    width: 130px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-button span:after {
-    content: '»';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -15px;
-    transition: 0.5s;
-}
-
-button:hover span {
-    padding-right: 15px;
-}
-
-button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-*/
 /*-----------------------------------------FOTOS HABITACIONES-------------------------------------------------------*/
 /* General Styles */
-
-
-/* Section Container */
-
-
-
-
-
-#fotos_imagenes .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-    gap: 100px; /* Espacio entre columnas */
-}
-
-#fotos_imagenes .relative {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px #0c1401;
-}
-
 
 #fotos_imagenes {
     padding: 20px;
@@ -237,6 +168,7 @@ button:hover span:after {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 #fotos_imagenes img {
     width: 100%;
     height: 600px; /* Ajusta la altura de las imágenes */
@@ -315,7 +247,6 @@ button:hover span:after {
     }
 }
 
-
 /* Sección Hero */
 .hero {
     background-image: url('../Multimedia/foto1.png');
@@ -348,16 +279,18 @@ footer p {
     margin: 0;
     font-size: 14px;
 }
-text-lg mb-4{
-    text-align: justify;
-}
+
 footer a {
     text-decoration: none;
     color: azure;
 }
 
-/* estilos bandera*/
-/* Estilos para el menú desplegable */
+/* Ajustar texto de clase text-lg mb-4 */
+text-lg mb-4 {
+    text-align: justify;
+}
+
+/* Estilos bandera / menú de idioma */
 #languageMenu {
     font-size: 1rem;
     padding: 5px 10px;
@@ -370,4 +303,41 @@ footer a {
 
 #languageMenu:hover {
     background-color: #eaeaea;
+}
+
+/* -------------------------------------------------------------------------- */
+/*    BLOQUE PARA EVITAR QUE GOOGLE TRANSLATE MODIFIQUE TU DISEÑO            */
+/* -------------------------------------------------------------------------- */
+
+/* Oculta la barra superior que Google a veces coloca */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-menu-frame.skiptranslate {
+    display: none !important;
+}
+
+/* Evita que el body se mueva hacia abajo */
+body {
+    top: 0 !important;
+}
+
+/* Oculta el ícono de Google en el widget */
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Evita que cambie la tipografía/tamaño general del widget */
+.goog-te-gadget {
+    font-size: 0 !important;
+    line-height: 0 !important;
+}
+
+/* Ajusta el estilo del combo de selección de idioma */
+.goog-te-gadget .goog-te-combo {
+    margin: 0 !important;
+    font-size: 14px !important;
+    color: #000 !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc !important;
+    padding: 5px !important;
+    background-color: #fff !important;
 }
