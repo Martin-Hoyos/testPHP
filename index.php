@@ -28,7 +28,9 @@ session_start();
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
+            <li>
                 <div id="google_translate_element"></div>
+            </li>
             <li>
                 <button><span><a href="Reservar.php">Reservar</a></span></button>
             </li>
