@@ -37,7 +37,7 @@ session_start();
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
-            <li style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+            <li>
                 <div id="google_translate_element"></div>
             </li>
 
