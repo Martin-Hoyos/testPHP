@@ -31,6 +31,10 @@ session_start();
             </a>
         </h1>
     </div>
+
+    <li>
+        <div id="google_translate_element"></div>
+    </li>
     <nav>
         <ul>
             <li><a href="index.php">Inicio</a></li>
