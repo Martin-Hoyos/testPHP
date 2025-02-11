@@ -254,7 +254,7 @@ session_start();
                     </li>
                     <li class="mb-2">
                         <a class="text-gray-400 hover:text-white" href="#">
-                            Hsitoria
+                            Historia
                         </a>
                     </li>
                     <li class="mb-2">
