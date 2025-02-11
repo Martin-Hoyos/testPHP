@@ -5,12 +5,48 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="Styles/servcios.css">
   <title>Servicios - BELLAVISTA</title>
+  <script>
+    // Esta función la llama automáticamente el script de Google al inicializarse
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en,it,fr,ru,ar,ja,ko,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+
+      // Re-aplicar el idioma guardado (si existe)
+      const savedLang = localStorage.getItem('selectedLanguage');
+      if (savedLang) {
+        // Esperamos un breve tiempo para que se cargue el traductor
+        setTimeout(() => {
+          const combo = document.querySelector('.goog-te-combo');
+          if (combo) {
+            combo.value = savedLang;      // Seleccionamos el idioma guardado
+            combo.dispatchEvent(new Event('change')); // Disparamos el cambio
+          }
+        }, 500);
+      }
+    }
+
+    // Detectar cuando el usuario cambia el idioma en el combo
+    document.addEventListener('change', function(e) {
+      if (e.target && e.target.classList.contains('goog-te-combo')) {
+        const selectedLang = e.target.value;
+        localStorage.setItem('selectedLanguage', selectedLang);
+      }
+    });
+  </script>
+
+  <!-- Script oficial de Google Translate -->
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </head>
 <body>
 <header class="hidden-header">
   <div class="logo">
     <h1><a href="index.php"><img src="Multimedia/logo_BELLAVIST_blanco.png" alt="LogoMenu"></a></h1>
   </div>
+  <div id="google_translate_element"></div>
   <nav>
     <ul>
       <li><a href="index.php">Inicio</a></li>
