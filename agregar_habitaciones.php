@@ -160,8 +160,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Multimedia/FOTO1_SUITE_KING_BALCON.jpeg">Suite King + Balcon</option>
             <option value="Multimedia/Diseno_sin_titulo_2.jpg">Suite King</option>
         </select>
-        <input type="url" name="fotos" id="fotos" placeholder="Ingrese la URL de la foto">
-
         <button type="submit">Agregar Habitación</button>
     </form>
 
