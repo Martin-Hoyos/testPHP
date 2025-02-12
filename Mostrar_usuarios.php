@@ -13,7 +13,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $sql = "SELECT email, nombre FROM usuario";
+    $sql = "SELECT email, nombre, id_u FROM usuario";
     $stmt = $pdo->query($sql);
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -129,6 +129,7 @@ try {
     <?php if (!empty($usuarios)): ?>
         <?php foreach ($usuarios as $usuarios): ?>
             <tr id="row-<?= htmlspecialchars($usuarios['numero_habitacion']) ?>">
+                <td><?= htmlspecialchars($usuarios['id_u']) ?></td>
                 <td><?= htmlspecialchars($usuarios['email']) ?></td>
                 <td><?= htmlspecialchars($usuarios['nombre']) ?></td>
                 <td>
