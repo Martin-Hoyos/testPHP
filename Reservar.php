@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
-
 <body class="bg-gray-100 font-roboto">
 <header class="hidden-header">
     <div class="logo">
@@ -28,28 +27,17 @@
 <div class="container mx-auto p-4">
     <h2 class="text-2xl font-bold text-gray-700 text-center">Reserva de Habitaciones</h2>
     <form id="buscarHabitaciones" class="mt-4">
-        <input type="hidden" id="usuario_id" name="usuario_id">
-
         <select name="lugar" id="lugar" required>
             <option value="">Seleccione una Ciudad</option>
             <option value="Lérida">Vall de boí, Lérida</option>
             <option value="Cáceres">Las Hurdes (Cáceres)</option>
             <option value="Cantabria">Valles Pasiegos, Cantabria</option>
         </select>
-
-        <input type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Nombre" required>
-        <input type="text" name="apellidos_cliente" id="apellidos_cliente" placeholder="Apellidos" required>
-        <input type="email" name="email" id="email" placeholder="Correo Electrónico" required>
-        <input type="tel" name="numero_telefono" id="numero_telefono" placeholder="Teléfono" required>
-
         <input type="date" name="fechaEntrada" id="fechaEntrada" required>
         <input type="date" name="fechaSalida" id="fechaSalida" required>
-
         <button type="submit">Ver Disponibilidad</button>
     </form>
-
     <div id="resultado" class="mt-4"></div>
-
 </div>
 
 <script>
@@ -95,6 +83,5 @@
     });
 
 </script>
-
 </body>
 </html>
