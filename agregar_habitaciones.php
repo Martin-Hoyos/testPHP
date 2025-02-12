@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <form action="agregar_habitaciones.php" method="post">
         <label for="numero_habitacion">Número de Habitación</label>
-        <input type="number" name="numero_habitacion" id="numero_habitacion" placeholder="Ingrese el número" required>
+        <input type="number" name="numero_habitacion" id="numero_habitacion" placeholder="Ingrese el número">
 
         <label for="nombre_habitacion">Nombre de la Habitación</label>
         <select name="nombre_habitacion" id="nombre_habitacion" required>
