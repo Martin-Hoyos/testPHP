@@ -17,13 +17,28 @@ main {
     margin: 0 auto;
     padding: 20px;
 }
-h1 {
+
+
+.container h1 {
     text-align: center;
     margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+
 }
 .section {
     margin-bottom: 40px;
 }
+.section h2 {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.section h3 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .services, .activities {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
