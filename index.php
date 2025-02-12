@@ -164,7 +164,7 @@ session_start();
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div class="relative">
-                    <img  src="Multimedia/diseño_sin_titulo.jpg"/>
+                    <img  src="Multimedia/queen.png"/>
                     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                         <div class="flex items-center text-white mb-2">
                             <i class="fas fa-user mr-2">
