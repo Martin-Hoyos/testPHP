@@ -1,7 +1,4 @@
 <?php
-session_start();
-
-// Asigna valores usando el operador de fusión null para evitar warnings
 $lugar = $_GET['lugar'] ?? '';
 $fechaEntrada = $_GET['fechaEntrada'] ?? '';
 $fechaSalida = $_GET['fechaSalida'] ?? '';
