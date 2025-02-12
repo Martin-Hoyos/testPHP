@@ -45,7 +45,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bindParam(':fotos', $fotos);
 
             if ($stmt->execute()) {
-                $mensaje = "<p style='color:green;'>Habitación agregada exitosamente.</p>";
+                echo "<p style='color:green;'>Habitación agregada exitosamente.</p>";
+                echo "<script>
+            setTimeout(function() {
+                window.location.href = 'controlhabitaciones.php'; 
+            }, 3000); 
+          </script>";
             } else {
                 $mensaje = "<p style='color:red;'>Error al agregar la habitación.</p>";
             }
