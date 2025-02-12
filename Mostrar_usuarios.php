@@ -133,7 +133,7 @@ try {
                 <td><?= htmlspecialchars($usuarios['nombre']) ?></td>
                 <td>
                     <!-- Botón de eliminar que llama a la función JavaScript -->
-                    <button class="delete-btn" onclick="eliminarHabitacion(<?= htmlspecialchars($usuarios['numero_habitacion']) ?>, this)">Eliminar</button>
+                    <button class="delete-btn" onclick="eliminarHabitacion(<?= htmlspecialchars($usuarios['id_u']) ?>, this)">Eliminar</button>
                 </td>
             </tr>
         <?php endforeach; ?>
