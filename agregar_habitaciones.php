@@ -149,7 +149,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="number" step="0.01" name="precio_noche" id="precio_noche" placeholder="Ingrese el precio" required>
 
         <label for="lugar">Lugar</label>
-        <input type="text" name="lugar" id="lugar" placeholder="Ingrese la ubicación" required>
+        <select name="lugar" id="lugar" required>
+            <option value="Cantabria">Cantabria</option>
+            <option value="Lérida">Lérida</option>
+            <option value="Cáceres">Cáceres</option>
+        </select>
 
         <label for="fotos">URL de la Foto</label>
         <input type="url" name="fotos" id="fotos" placeholder="Ingrese la URL de la foto">
