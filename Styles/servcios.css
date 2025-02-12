@@ -168,3 +168,21 @@ nav ul li a:hover {
 .h-button:focus span:nth-child(6) {
     transition-delay: 0.15s;
 }
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: azure;
+}
