@@ -55,7 +55,7 @@
         <h1>Bienvenido, en este panel encotraras las bases de datos y cambiarlas a tu conveniencia.</h1>
         <div class="button-container">
             <button onclick="location.href='control_habitaciones.php'">Habitaciones</button>
-            <button onclick="location.href='profile.php'">Usuarios</button>
+            <button onclick="location.href='Mostrar_usuarios.php'">Usuarios</button>
             <button onclick="location.href='settings.php'">Reseñas</button>
             <button onclick="location.href='Logout.php'">Cerrar Sesión</button>
         </div>
