@@ -1,11 +1,11 @@
 <?php
-$servername = "localhost"; // Cambia según tu servidor
-$username = "root"; // Usuario de la base de datos
-$password = ""; // Contraseña de la base de datos
-$database = "tu_base_de_datos"; // Nombre de la base de datos
+$host = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
+$dbname = "bew3kbjtj9n5faq31kla";
+$username = "ueaxccosiwgfnuo5";
+$password = "J9d5wTPIyWsgRyXmEJfd";
 
 // Conectar a MySQL
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 // Verificar la conexión
 if ($conn->connect_error) {
