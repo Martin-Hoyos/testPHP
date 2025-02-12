@@ -130,10 +130,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <form action="agregar_habitaciones.php" method="post">
         <label for="numero_habitacion">Número de Habitación</label>
-        <input type="number" name="numero_habitacion" id="numero_habitacion" placeholder="Ingrese el número (opcional o requerido según tu BD)">
+        <input type="number" name="numero_habitacion" id="numero_habitacion" placeholder="Ingrese el número" required>
 
         <label for="nombre_habitacion">Nombre de la Habitación</label>
-        <input type="text" name="nombre_habitacion" id="nombre_habitacion" placeholder="Ingrese el nombre" required>
+        <select name="nombre_habitacion" id="nombre_habitacion" required>
+            <option value="SUITE QUEEN de Lujo">SUITE QUEEN de Lujo</option>
+            <option value="SUITE KING de Lujo">SUITE KING de Lujo</option>
+            <option value="SUITE KING de Lujo + BALCÓN">SUITE KING de Lujo + BALCÓN</option>
+        </select>
 
         <label for="numero_personas">Número de Personas</label>
         <input type="number" name="numero_personas" id="numero_personas" placeholder="Ingrese la capacidad" required>
@@ -152,6 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <button type="submit">Agregar Habitación</button>
     </form>
+
 </div>
 </body>
 </html>
