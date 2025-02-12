@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta para obtener las reseñas
-$sql = "SELECT Nombre, Puntuacion, Comentario FROM reseñas ORDER BY Puntuacion DESC";
+$sql = "SELECT Nombre, Puntuacion, Comentario FROM Resenas ORDER BY Puntuacion DESC";
 $result = $conn->query($sql);
 
 // Verificar si hay resultados
