@@ -7,22 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('session.php')
-            .then(response => response.json())
-            .then(user => {
-                if (user) {
-                    document.getElementById('usuario_id').value = user.id;
-                    document.getElementById('nombre_cliente').value = user.nombre;
-                    document.getElementById('apellidos_cliente').value = user.apellidos;
-                    document.getElementById('email').value = user.email;
-                    document.getElementById('numero_telefono').value = user.telefono;
-                }
-            })
-            .catch(error => console.error('Error al recuperar sesión:', error));
-    });
-</script>
 
 <body class="bg-gray-100 font-roboto">
 <header class="hidden-header">

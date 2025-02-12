@@ -41,7 +41,22 @@ session_start();
             }
         });
     </script>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('session.php')
+                .then(response => response.json())
+                .then(user => {
+                    if (user) {
+                        document.getElementById('usuario_id').value = user.id;
+                        document.getElementById('nombre_cliente').value = user.nombre;
+                        document.getElementById('apellidos_cliente').value = user.apellidos;
+                        document.getElementById('email').value = user.email;
+                        document.getElementById('numero_telefono').value = user.telefono;
+                    }
+                })
+                .catch(error => console.error('Error al recuperar sesión:', error));
+        });
+    </script>
     <!-- Script oficial de Google Translate -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
