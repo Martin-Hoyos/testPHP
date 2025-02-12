@@ -28,7 +28,7 @@ $result = $stmt_check->get_result();
 
 if ($result->num_rows > 0) {
 
-    echo "<script>alert('El correo ya está registrado. Intente con otro.'); window.location.href='registrar.php';</script>";
+    echo "<script>alert('Ya tenemos una opinion con su cuenta'); window.location.href='servicios.html';</script>";
 } else {
 
     $sql_insert = "INSERT INTO Resenas (Nombre, Correo, Puntuacion, Comentario) VALUES (?, ?, ?, ?)";
