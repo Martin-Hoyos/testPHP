@@ -1,6 +1,12 @@
 <?php
 session_start();
-require_once 'conexion.php';
+$host = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
+$dbname = "bew3kbjtj9n5faq31kla";
+$dbUsername = "ueaxccosiwgfnuo5";
+$dbPassword = "J9d5wTPIyWsgRyXmEJfd";
+
+$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUsername, $dbPassword);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $lugar = $_GET['lugar'] ?? '';
 $fechaEntrada = $_GET['fechaEntrada'] ?? '';
