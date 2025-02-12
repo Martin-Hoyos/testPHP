@@ -103,14 +103,7 @@ try {
 </head>
 <body>
 
-<!-- Sección de botones en la parte superior -->
-<div class="header-buttons">
-    <button onclick="location.href='agregar_habitaciones.php'">Agregar Habitación</button>
-    <button onclick="location.href='buscarHabitaciones.php'">Buscar</button>
-    <button onclick="location.href='reservas.php'">Ver Reservas</button>
-</div>
-
-<h2>Listado de Habitaciones</h2>
+<h2>Control de usarios</h2>
 
 <table>
     <thead>
@@ -129,7 +122,7 @@ try {
                 <td><?= htmlspecialchars($usuarios['nombre']) ?></td>
                 <td>
                     <!-- Botón de eliminar que llama a la función JavaScript -->
-                    <button class="delete-btn" onclick="eliminarHabitacion(<?= htmlspecialchars($usuarios['id_u']) ?>, this)">Eliminar</button>
+                    <button class="delete-btn" onclick="eliminarUsuario(<?= htmlspecialchars($usuarios['id_u']) ?>, this)">Eliminar</button>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -140,3 +133,36 @@ try {
     <?php endif; ?>
     </tbody>
 </table>
+
+<script>
+    function eliminarUsuario(nombre, btn) {
+        if (confirm("¿Está seguro que desea eliminar el usario " + nombre + "?")) {
+            // Preparar los datos para enviar por POST
+            var formData = new FormData();
+            formData.append("id_u", nombre);
+
+            // Enviar la petición AJAX a eliminar_ajax.php
+            fetch("eliminarUsario.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success) {
+                        alert(data.success);
+                        // Eliminar la fila de la tabla sin recargar la página
+                        var row = btn.parentNode.parentNode;
+                        row.parentNode.removeChild(row);
+                    } else if(data.error) {
+                        alert(data.error);
+                    } else {
+                        alert("Error desconocido.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Ocurrió un error al intentar eliminar al usario.");
+                });
+        }
+    }
+</script>
