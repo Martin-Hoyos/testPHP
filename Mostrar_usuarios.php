@@ -128,8 +128,7 @@ try {
     <tbody>
     <?php if (!empty($usuarios)): ?>
         <?php foreach ($usuarios as $usuarios): ?>
-            <tr id="row-<?= htmlspecialchars($usuarios['numero_habitacion']) ?>">
-                <td><?= htmlspecialchars($usuarios['id_u']) ?></td>
+            <tr id="row-<?= htmlspecialchars($usuarios['id_u']) ?>">
                 <td><?= htmlspecialchars($usuarios['email']) ?></td>
                 <td><?= htmlspecialchars($usuarios['nombre']) ?></td>
                 <td>
