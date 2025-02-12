@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "<p style='color:green;'>Habitación agregada exitosamente.</p>";
                 echo "<script>
             setTimeout(function() {
-                window.location.href = 'controlhabitaciones.php'; 
+                window.location.href = 'control_habitaciones.php'; 
             }, 3000); 
           </script>";
             } else {
