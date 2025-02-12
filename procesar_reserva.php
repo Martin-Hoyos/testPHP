@@ -18,10 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("isssssss", $numero_habitacion, $nombre_cliente, $apellidos_cliente, $email, $numero_telefono, $fecha_entrada, $fecha_salida, $lugar);
 
     if ($stmt->execute()) {
-        header("Location: reservar.php?success=1");
+        header("Location: Reservar.php?success=1");
         exit();
     } else {
-        header("Location: reservar.php?error=1");
+        header("Location: Reservar.php?error=1");
         exit();
     }
 }

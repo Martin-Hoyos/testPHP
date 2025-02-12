@@ -72,7 +72,7 @@
                     <p><strong>Personas:</strong> ${habitacion.numero_personas}</p>
                     <p><strong>Descripción:</strong> ${habitacion.descripcion}</p>
                     <p><strong>Precio:</strong> ${habitacion.precio_noche}€ por noche</p>
-                    <a href="bromita.html?habitacion=${habitacion.id}&nombre=${habitacion.nombre_habitacion}&precio=${habitacion.precio_noche}"
+                    <a href="confirmar_reserva.php?habitacion=${habitacion.id}&nombre=${habitacion.nombre_habitacion}&precio=${habitacion.precio_noche}"
                         class="block bg-black text-white text-center py-2 px-4 rounded mt-3">
                         Reservar
                     </a>
