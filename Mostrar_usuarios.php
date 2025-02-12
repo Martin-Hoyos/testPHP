@@ -115,14 +115,10 @@ try {
 <table>
     <thead>
     <tr>
-        <th>N° Habitación</th>
-        <th>Nombre</th>
-        <th>Capacidad</th>
-        <th>Descripción</th>
-        <th>Precio por Noche</th>
-        <th>Ubicación</th>
-        <th>Foto</th>
-        <th>Acciones</th>
+        <th>ID de Usuario</th>
+        <th>Email de usario</th>
+        <th>Nombre de usario</th>
+
     </tr>
     </thead>
     <tbody>
