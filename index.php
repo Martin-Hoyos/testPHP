@@ -94,7 +94,7 @@ session_start();
             <div class="background"></div>
             <img src="Multimedia/BELLAVISTA_LOGO_BLANCO.png" alt="logoHero">
         </div>
-        <button class="putobotonreservar"><span><a href="Registrar.php">Reservar</a></span></button>
+        <button class="putobotonreservar"><span><a href="Reservar.php">Reservar</a></span></button>
     </section>
     <section>
         <!-- Contenido adicional -->
