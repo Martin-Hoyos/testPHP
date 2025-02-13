@@ -74,9 +74,9 @@
                 <p><strong>Precio:</strong> ${habitacion.precio_noche}€ por noche</p>
                 <form action="confirmar_reserva.php" method="POST">
                     <input type="hidden" name="numero_habitacion" value="${habitacion.id}">
-                    <input type="hidden" name="lugar" value="${habitacion.lugar}">
-                    <input type="hidden" name="fecha_entrada" value="${document.getElementById('fechaEntrada').value}">
-                    <input type="hidden" name="fecha_salida" value="${document.getElementById('fechaSalida').value}">
+                <input type="hidden" name="lugar" value="${habitacion.lugar}">
+                <input type="hidden" name="fecha_entrada" value="${document.getElementById('fechaEntrada').value}">
+                <input type="hidden" name="fecha_salida" value="${document.getElementById('fechaSalida').value}">
                     <button type="submit" class="block bg-black text-white text-center py-2 px-4 rounded mt-3">Reservar</button>
                 </form>
             </div>`;

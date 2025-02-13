@@ -1,71 +1,71 @@
 <?php
 session_start();
 
-// Configuración de la conexión a la base de datos
-$host = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
-$dbname = "bew3kbjtj9n5faq31kla";
-$dbUsername = "ueaxccosiwgfnuo5";
-$dbPassword = "J9d5wTPIyWsgRyXmEJfd";
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUsername, $dbPassword);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
-
-// Verificar si el usuario ha iniciado sesión y si la sesión tiene datos
-if (!isset($_SESSION['usuario']) || !is_array($_SESSION['usuario'])) {
+// Verificar si el usuario ha iniciado sesión
+// (Tu login guarda el correo en $_SESSION['usuario'] y el nombre en $_SESSION['nombre'])
+if (!isset($_SESSION['usuario'])) {
     die("ERROR: No has iniciado sesión. <a href='Login.html'>Inicia sesión</a>");
 }
 
-// Mostrar la sesión para comprobar los datos del usuario
-echo "<pre>";
-print_r($_SESSION['usuario']);
-echo "</pre>";
+// Datos de conexión a la base de datos
+$servername = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
+$usernameDB = "ueaxccosiwgfnuo5";
+$passwordDB = "J9d5wTPIyWsgRyXmEJfd";
+$dbname = "bew3kbjtj9n5faq31kla";
 
-// Obtener datos del usuario desde la sesión
-$usuario = $_SESSION['usuario'];
-$nombre = $usuario['nombre'] ?? 'Sin nombre';
-$apellidos = $usuario['apellidos'] ?? 'Sin apellidos';
-$email = $usuario['email'] ?? 'Sin email';
-$telefono = $usuario['telefono'] ?? 'Sin teléfono';
+// Crear conexión
+$conn = new mysqli($servername, $usernameDB, $passwordDB, $dbname);
 
-// Obtener y sanitizar los datos del formulario
+// Comprobar la conexión
+if ($conn->connect_error) {
+    die("Error en la conexión: " . $conn->connect_error);
+}
+
+// Recibir datos del formulario
+$numero_habitacion = $_POST['numero_habitacion'] ?? '';
 $lugar = $_POST['lugar'] ?? '';
-$fechaEntrada = $_POST['fecha_entrada'] ?? '';
-$fechaSalida = $_POST['fecha_salida'] ?? '';
-$habitacion_id = $_POST['numero_habitacion'] ?? '';
+$fecha_entrada = $_POST['fecha_entrada'] ?? '';
+$fecha_salida = $_POST['fecha_salida'] ?? '';
 
-// Verificar que los datos obligatorios están presentes
-if (empty($lugar) || empty($fechaEntrada) || empty($fechaSalida) || empty($habitacion_id)) {
-    die("Error: faltan parámetros requeridos.");
-}
+// Obtener datos del usuario en sesión
+$nombre_cliente = $_SESSION['nombre'];   // Nombre del usuario
+$email_cliente = $_SESSION['usuario'];   // Correo del usuario
 
-// Comprobar si la habitación ya está reservada en esas fechas
-$stmtCheck = $pdo->prepare("SELECT COUNT(*) FROM reservas WHERE numero_habitacion = ? 
-                            AND (fecha_entrada BETWEEN ? AND ? OR fecha_salida BETWEEN ? AND ?)");
-$stmtCheck->execute([$habitacion_id, $fechaEntrada, $fechaSalida, $fechaEntrada, $fechaSalida]);
-$existeReserva = $stmtCheck->fetchColumn();
+// Aquí podrías usar un teléfono si lo tuvieras en tu tabla de usuarios
+// o simplemente dejarlo vacío o con un valor por defecto:
+$numero_telefono = ''; // O "000000000" si lo prefieres
 
-if ($existeReserva > 0) {
-    die("Error: La habitación ya está reservada en estas fechas.");
-}
+// Preparar la sentencia SQL para insertar en la tabla "reservas"
+$sql = "INSERT INTO reservas 
+        (numero_habitacion, nombre_cliente, email, numero_telefono, fecha_entrada, fecha_salida, lugar) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-// Insertar la reserva en la base de datos
-try {
-    $stmt = $pdo->prepare("INSERT INTO reservas (numero_habitacion, nombre_cliente, apellidos_cliente, email, numero_telefono, fecha_entrada, fecha_salida, lugar) 
-                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("issssss",
+    $numero_habitacion,
+    $nombre_cliente,
+    $email_cliente,
+    $numero_telefono,
+    $fecha_entrada,
+    $fecha_salida,
+    $lugar
+);
 
-    $stmt->execute([$habitacion_id, $nombre, $apellidos, $email, $telefono, $fechaEntrada, $fechaSalida, $lugar]);
-
+// Ejecutar la inserción
+if ($stmt->execute()) {
     echo "<h2>Reserva confirmada con éxito.</h2>";
-    echo "<p>Habitación: " . htmlspecialchars($habitacion_id) . "</p>";
-    echo "<p>Nombre: " . htmlspecialchars($nombre) . "</p>";
-    echo "<p>Email: " . htmlspecialchars($email) . "</p>";
-    echo "<p>Fecha de Entrada: " . htmlspecialchars($fechaEntrada) . "</p>";
-    echo "<p>Fecha de Salida: " . htmlspecialchars($fechaSalida) . "</p>";
+    echo "<p>Habitación: " . htmlspecialchars($numero_habitacion) . "</p>";
+    echo "<p>Nombre: " . htmlspecialchars($nombre_cliente) . "</p>";
+    echo "<p>Email: " . htmlspecialchars($email_cliente) . "</p>";
+    echo "<p>Fecha de Entrada: " . htmlspecialchars($fecha_entrada) . "</p>";
+    echo "<p>Fecha de Salida: " . htmlspecialchars($fecha_salida) . "</p>";
+    echo "<p>Lugar: " . htmlspecialchars($lugar) . "</p>";
     echo "<a href='index.php'>Volver al inicio</a>";
-} catch (PDOException $e) {
-    die("Error al registrar la reserva: " . $e->getMessage());
+} else {
+    echo "Error al registrar la reserva: " . $stmt->error;
 }
+
+// Cerrar conexiones
+$stmt->close();
+$conn->close();
+?>
