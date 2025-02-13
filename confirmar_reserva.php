@@ -59,7 +59,7 @@ if (!$stmt) {
     die("Error en la preparación de la consulta: " . $conn->error);
 }
 
-$stmt->bind_param("issssss",
+$stmt->bind_param("isssss",
     $numero_habitacion,
     $nombre_cliente,
     $email_cliente,
