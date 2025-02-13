@@ -33,7 +33,7 @@ if (empty($lugar) || empty($fechaEntrada) || empty($fechaSalida) || empty($habit
 }
 
 // Comprobar si la habitación ya está reservada en esas fechas
-$stmtCheck = $pdo->prepare("SELECT COUNT(*) FROM RESERVADAS WHERE numero_habitacion = ? 
+$stmtCheck = $pdo->prepare("SELECT COUNT(*) FROM Reservadas WHERE numero_habitacion = ? 
                             AND (fecha_entrada BETWEEN ? AND ? OR fecha_salida BETWEEN ? AND ?)");
 $stmtCheck->execute([$habitacion_id, $fechaEntrada, $fechaSalida, $fechaEntrada, $fechaSalida]);
 $existeReserva = $stmtCheck->fetchColumn();
