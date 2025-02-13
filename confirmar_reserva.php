@@ -15,12 +15,16 @@ try {
 }
 
 // Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['usuario'])) {
-    die("Debes iniciar sesión para reservar.");
+if (!isset($_SESSION['usuario']) || !is_array($_SESSION['usuario'])) {
+    die("Debes iniciar sesión para reservar. <a href='Login.html'>Iniciar sesión</a>");
 }
 
 // Obtener datos del usuario desde la sesión
 $usuario = $_SESSION['usuario'];
+$nombre = $usuario['nombre'] ?? '';
+$apellidos = $usuario['apellidos'] ?? '';
+$email = $usuario['email'] ?? '';
+$telefono = $usuario['telefono'] ?? '';
 
 // Obtener y sanitizar los datos del formulario
 $lugar = $_POST['lugar'] ?? '';
@@ -33,7 +37,7 @@ if (empty($lugar) || empty($fechaEntrada) || empty($fechaSalida) || empty($habit
 }
 
 // Comprobar si la habitación ya está reservada en esas fechas
-$stmtCheck = $pdo->prepare("SELECT COUNT(*) FROM Reservadas WHERE numero_habitacion = ? 
+$stmtCheck = $pdo->prepare("SELECT COUNT(*) FROM reservas WHERE numero_habitacion = ? 
                             AND (fecha_entrada BETWEEN ? AND ? OR fecha_salida BETWEEN ? AND ?)");
 $stmtCheck->execute([$habitacion_id, $fechaEntrada, $fechaSalida, $fechaEntrada, $fechaSalida]);
 $existeReserva = $stmtCheck->fetchColumn();
@@ -47,13 +51,15 @@ try {
     $stmt = $pdo->prepare("INSERT INTO reservas (numero_habitacion, nombre_cliente, apellidos_cliente, email, numero_telefono, fecha_entrada, fecha_salida, lugar) 
                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $usuario = $_SESSION['usuario'];
-    $nombre = $usuario['nombre'];
-    $apellidos = $usuario['apellidos'];
-    $email = $usuario['email'];
-    $telefono = $usuario['telefono'];
+    $stmt->execute([$habitacion_id, $nombre, $apellidos, $email, $telefono, $fechaEntrada, $fechaSalida, $lugar]);
 
-    echo "Reserva confirmada con éxito. <a href='index.php'>Volver al inicio</a>";
+    echo "<h2>Reserva confirmada con éxito.</h2>";
+    echo "<p>Habitación: " . htmlspecialchars($habitacion_id) . "</p>";
+    echo "<p>Nombre: " . htmlspecialchars($nombre) . "</p>";
+    echo "<p>Email: " . htmlspecialchars($email) . "</p>";
+    echo "<p>Fecha de Entrada: " . htmlspecialchars($fechaEntrada) . "</p>";
+    echo "<p>Fecha de Salida: " . htmlspecialchars($fechaSalida) . "</p>";
+    echo "<a href='index.php'>Volver al inicio</a>";
 } catch (PDOException $e) {
     die("Error al registrar la reserva: " . $e->getMessage());
 }

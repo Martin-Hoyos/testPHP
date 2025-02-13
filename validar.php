@@ -21,17 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
+        // Se obtiene la información del usuario
         $row = $result->fetch_assoc();
-
-        // Guardar todos los datos en un array en $_SESSION
-        $_SESSION['usuario'] = [
-            'id' => $row['id'],
-            'nombre' => $row['nombre'],
-            'apellidos' => $row['apellidos'],
-            'email' => $row['email'],
-            'telefono' => $row['telefono']
-        ];
-
+        $_SESSION['usuario'] = $email;
+        $_SESSION['nombre'] = $row['nombre'];
         header("Location: index.php");
         exit();
     } else {
@@ -41,4 +34,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-
