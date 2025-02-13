@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// Configuración de la conexión a la base de datos
 $host = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
 $dbname = "bew3kbjtj9n5faq31kla";
 $dbUsername = "ueaxccosiwgfnuo5";
@@ -17,17 +19,51 @@ if (!isset($_SESSION['usuario'])) {
     die("Debes iniciar sesión para reservar.");
 }
 
-$lugar = $_GET['lugar'] ?? '';
-$fechaEntrada = $_GET['fechaEntrada'] ?? '';
-$fechaSalida = $_GET['fechaSalida'] ?? '';
-$habitacion_id = $_GET['id'] ?? '';
+// Obtener datos del usuario desde la sesión
+$usuario = $_SESSION['usuario'];
+
+// Obtener y sanitizar los datos del formulario
+$lugar = $_POST['lugar'] ?? '';
+$fechaEntrada = $_POST['fecha_entrada'] ?? '';
+$fechaSalida = $_POST['fecha_salida'] ?? '';
+$habitacion_id = $_POST['numero_habitacion'] ?? '';
 
 if (empty($lugar) || empty($fechaEntrada) || empty($fechaSalida) || empty($habitacion_id)) {
     die("Error: faltan parámetros requeridos.");
 }
 
-$usuario = $_SESSION['usuario'];
+// Comprobar si la habitación ya está reservada en esas fechas
+$stmtCheck = $pdo->prepare("SELECT COUNT(*) FROM reservas WHERE numero_habitacion = ? 
+                            AND (fecha_entrada BETWEEN ? AND ? OR fecha_salida BETWEEN ? AND ?)");
+$stmtCheck->execute([$habitacion_id, $fechaEntrada, $fechaSalida, $fechaEntrada, $fechaSalida]);
+$existeReserva = $stmtCheck->fetchColumn();
+
+if ($existeReserva > 0) {
+    die("Error: La habitación ya está reservada en estas fechas.");
+}
+
+// Insertar la reserva en la base de datos
+try {
+    $stmt = $pdo->prepare("INSERT INTO reservas (numero_habitacion, nombre_cliente, apellidos_cliente, email, numero_telefono, fecha_entrada, fecha_salida, lugar) 
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+
+    $stmt->execute([
+        $habitacion_id,
+        $usuario['nombre'],
+        $usuario['apellidos'],
+        $usuario['email'],
+        $usuario['telefono'],
+        $fechaEntrada,
+        $fechaSalida,
+        $lugar
+    ]);
+
+    echo "Reserva confirmada con éxito. <a href='index.php'>Volver al inicio</a>";
+} catch (PDOException $e) {
+    die("Error al registrar la reserva: " . $e->getMessage());
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
