@@ -14,17 +14,22 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 
-// Verificar si el usuario ha iniciado sesión
+// Verificar si el usuario ha iniciado sesión y si la sesión tiene datos
 if (!isset($_SESSION['usuario']) || !is_array($_SESSION['usuario'])) {
-    die("Debes iniciar sesión para reservar. <a href='Login.html'>Iniciar sesión</a>");
+    die("ERROR: No has iniciado sesión. <a href='Login.html'>Inicia sesión</a>");
 }
+
+// Mostrar la sesión para comprobar los datos del usuario
+echo "<pre>";
+print_r($_SESSION['usuario']);
+echo "</pre>";
 
 // Obtener datos del usuario desde la sesión
 $usuario = $_SESSION['usuario'];
-$nombre = $usuario['nombre'] ?? '';
-$apellidos = $usuario['apellidos'] ?? '';
-$email = $usuario['email'] ?? '';
-$telefono = $usuario['telefono'] ?? '';
+$nombre = $usuario['nombre'] ?? 'Sin nombre';
+$apellidos = $usuario['apellidos'] ?? 'Sin apellidos';
+$email = $usuario['email'] ?? 'Sin email';
+$telefono = $usuario['telefono'] ?? 'Sin teléfono';
 
 // Obtener y sanitizar los datos del formulario
 $lugar = $_POST['lugar'] ?? '';
@@ -32,6 +37,7 @@ $fechaEntrada = $_POST['fecha_entrada'] ?? '';
 $fechaSalida = $_POST['fecha_salida'] ?? '';
 $habitacion_id = $_POST['numero_habitacion'] ?? '';
 
+// Verificar que los datos obligatorios están presentes
 if (empty($lugar) || empty($fechaEntrada) || empty($fechaSalida) || empty($habitacion_id)) {
     die("Error: faltan parámetros requeridos.");
 }
@@ -63,38 +69,3 @@ try {
 } catch (PDOException $e) {
     die("Error al registrar la reserva: " . $e->getMessage());
 }
-?>
-
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Confirmar Reserva</title>
-    <link rel="stylesheet" href="styles/reserva.css">
-</head>
-<body>
-<h2>Confirmar Reserva</h2>
-
-<form action="procesar_reserva.php" method="POST">
-    <input type="hidden" name="numero_habitacion" value="<?= htmlspecialchars($habitacion_id) ?>">
-    <input type="hidden" name="lugar" value="<?= htmlspecialchars($lugar) ?>">
-    <input type="hidden" name="fecha_entrada" value="<?= htmlspecialchars($fechaEntrada) ?>">
-    <input type="hidden" name="fecha_salida" value="<?= htmlspecialchars($fechaSalida) ?>">
-
-    <label>Nombre</label>
-    <input type="text" name="nombre_cliente" value="<?= htmlspecialchars($usuario['nombre']) ?>" required>
-
-    <label>Apellidos</label>
-    <input type="text" name="apellidos_cliente" value="<?= htmlspecialchars($usuario['apellidos']) ?>" required>
-
-    <label>Email</label>
-    <input type="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>" required>
-
-    <label>Teléfono</label>
-    <input type="text" name="numero_telefono" value="<?= htmlspecialchars($usuario['telefono']) ?>" required>
-
-    <button type="submit">Confirmar Reserva</button>
-</form>
-</body>
-</html>
