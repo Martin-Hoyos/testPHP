@@ -6,6 +6,14 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+
+.menu-temporal  {
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -23,6 +31,7 @@ h1 {
 }
 .section {
     margin-bottom: 40px;
+    font-size: 25px;
 
 }
 .services{
@@ -65,9 +74,11 @@ nav ul {
     display: flex;
 }
 
-nav ul li {
-    margin: 0 15px;
+.no-numbers {
+    list-style: none;
+    padding-left: 0;
 }
+
 nav ul li a {
     align-items: center;
     color: rgb(255, 255, 255);
@@ -80,4 +91,26 @@ nav ul li a:hover {
     font-size: 24px; /* Aumenta el tamaño de las letras */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra negra */
     text-decoration: none; /* Opcional: puedes eliminar el subrayado al hacer hover */
+}
+
+
+
+
+.carousel {
+    position: relative;
+    width: 650px; /* Ajusta al tamaño deseado */
+    height: 650px; /* Ajusta al tamaño deseado */
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen manteniendo la relación de aspecto */
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
 }

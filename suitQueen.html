@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="Styles/habitad.css">
-  <!-- Añadir Font Awesome para los iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>Servicios - BELLAVISTA</title>
   <script>
-    // Esta función la llama automáticamente el script de Google al inicializarse
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'es',
@@ -15,32 +13,25 @@
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
 
-      // Re-aplicar el idioma guardado (si existe)
       const savedLang = localStorage.getItem('selectedLanguage');
       if (savedLang) {
-        // Esperamos un breve tiempo para que se cargue el traductor
         setTimeout(() => {
           const combo = document.querySelector('.goog-te-combo');
           if (combo) {
-            combo.value = savedLang;      // Seleccionamos el idioma guardado
-            combo.dispatchEvent(new Event('change')); // Disparamos el cambio
+            combo.value = savedLang;
+            combo.dispatchEvent(new Event('change'));
           }
         }, 500);
       }
     }
 
-    // Detectar cuando el usuario cambia el idioma en el combo
     document.addEventListener('change', function(e) {
       if (e.target && e.target.classList.contains('goog-te-combo')) {
-        const selectedLang = e.target.value;
-        localStorage.setItem('selectedLanguage', selectedLang);
+        localStorage.setItem('selectedLanguage', e.target.value);
       }
     });
   </script>
-
-  <!-- Script oficial de Google Translate -->
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </head>
 <body>
 <header class="hidden-header">
@@ -50,39 +41,38 @@
   <div id="google_translate_element"></div>
   <nav>
     <ul>
-      <li><a href="index.php">Inicio</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="Habitaciones.html">Habitaciones</a></li>
-      <li><a href="Contacto.html">Contáctanos</a></li>
-      <li>
-        <span><a href="reservar.jsp">Reservar</a></span>
+      <li class="menu-temporal"><a href="index.php">Inicio</a></li>
+      <li class="menu-temporal"><a href="servicios.html">Servicios</a></li>
+      <li class="menu-temporal"><a href="Habitaciones.html">Habitaciones</a></li>
+      <li class="menu-temporal"><a href="Contacto.html">Contáctanos</a></li>
+      <li class="menu-temporal">
+        <span><a href="Reservar.php">Reservar</a></span>
       </li>
     </ul>
   </nav>
 </header>
 <br><br><br><br>
-<h1 class="h1SQ">Sueet Queen</h1>
+<h1 class="h1SQ">Suite Queen</h1>
 <div class="container">
   <div class="section">
     <h2>Imágenes</h2>
-    <div class="services">
-      <div class="card">
-        <img src="fotohabitacionhotel.jpg" alt="habitacionSquitQueen">
-      </div>
+    <div class="carousel">
+      <img src="Multimedia/Habitacion-Queen1.jpeg" alt="Habitacion 1" class="active">
+      <img src="Multimedia/Habitacion-King2.png" alt="Habitación 2">
+      <img src="Multimedia/Habitacion-Queen1.jpeg" alt="Habitación 3">
     </div>
   </div>
-  
   <div class="section">
     <h2>Información</h2>
     <div>
       <p>
-        Nuestra SUITE QUEEN de lujo Disfruta de la comodidad y el lujo en 
-        nuestra Suite Queen diseñada para 2 huéspedes. 
+        Nuestra SUITE QUEEN de lujo Disfruta de la comodidad y el lujo en
+        nuestra Suite Queen diseñada para 2 huéspedes.
         Equipado con todas las comodidades modernas y un diseño elegante.
         Ventanal Vertical Con vistas directas al campo, Disfruta tu y tu acompañante de la tranquilidad y la belleza del campo.
       </p>
     </div>
-    
+
     <div>
       <h3>Comodidades destacadas</h3>
       <ol>
@@ -96,6 +86,15 @@
     </div>
   </div>
 </div>
-
+<script>
+  let index = 0;
+  function showNextImage() {
+    let images = document.querySelectorAll('.carousel img');
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  }
+  setInterval(showNextImage, 3000);
+</script>
 </body>
 </html>
