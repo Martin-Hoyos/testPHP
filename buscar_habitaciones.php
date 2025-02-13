@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fechaEntrada = $_POST['fechaEntrada'] ?? null;
     $fechaSalida = $_POST['fechaSalida'] ?? null;
 
-    // Guardar los datos del usuario en sesión para no pedirlos dos veces
+
     $_SESSION['nombre_cliente'] = $_POST['nombre_cliente'] ?? '';
     $_SESSION['apellidos_cliente'] = $_POST['apellidos_cliente'] ?? '';
     $_SESSION['email'] = $_POST['email'] ?? '';

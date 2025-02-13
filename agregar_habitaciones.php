@@ -9,13 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dbPassword = "J9d5wTPIyWsgRyXmEJfd";
 
     try {
-        // Conectar a la base de datos usando PDO
+
         $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUsername, $dbPassword);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Recoger y limpiar los datos enviados desde el formulario
-        // (Asegúrate de que el formulario tenga los atributos name correctos)
-        $numero_habitacion  = $_POST['numero_habitacion'] ?? null;  // Puedes optar por autogenerarlo si es necesario
+        $numero_habitacion  = $_POST['numero_habitacion'] ?? null;
         $nombre_habitacion  = trim($_POST['nombre_habitacion'] ?? '');
         $numero_personas    = trim($_POST['numero_personas'] ?? '');
         $descripcion        = trim($_POST['descripcion'] ?? '');
@@ -23,19 +21,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $lugar              = trim($_POST['lugar'] ?? '');
         $fotos              = trim($_POST['fotos'] ?? '');
 
-        // Validar campos obligatorios (por ejemplo: nombre, número de personas, precio, lugar)
+
         if (empty($nombre_habitacion) || empty($numero_personas) || empty($precio_noche) || empty($lugar)) {
             $mensaje = "<p style='color:red;'>Por favor, complete los campos obligatorios.</p>";
         } else {
-            // Preparar la consulta SQL para insertar la habitación.
-            // Si numero_habitacion es autogenerado (por ejemplo, AUTO_INCREMENT) podrías omitirlo.
+
             $sql = "INSERT INTO Habitaciones (numero_habitacion, nombre_habitacion, numero_personas, descripcion, precio_noche, lugar, fotos)
                     VALUES (:numero_habitacion, :nombre_habitacion, :numero_personas, :descripcion, :precio_noche, :lugar, :fotos)";
 
             $stmt = $pdo->prepare($sql);
 
-            // Si el número de habitación es opcional o autogenerado, se puede enviar NULL o dejarlo fuera del insert
-            // En este ejemplo se asume que se ingresa manualmente.
             $stmt->bindParam(':numero_habitacion', $numero_habitacion, PDO::PARAM_INT);
             $stmt->bindParam(':nombre_habitacion', $nombre_habitacion);
             $stmt->bindParam(':numero_personas', $numero_personas, PDO::PARAM_INT);
