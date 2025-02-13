@@ -26,9 +26,8 @@ try {
 
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUser, $dbPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(":id_u", $idusario, PDO::PARAM_INT);
+    $stmt->bindParam(":numero_habitacion", $idusario, PDO::PARAM_INT);
     $stmt->execute();
 
     if($stmt->rowCount() > 0) {
