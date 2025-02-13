@@ -13,9 +13,9 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Consulta SQL para obtener todas las habitaciones
-    $sql = "SELECT numero_habitacion, nombre_habitacion, numero_personas, descripcion, precio_noche, lugar, fotos FROM Habitaciones";
+    $sql = "SELECT numero_habitacion , nombre_cliente, email, fecha_entrada, fecha_salida, lugar FROM Reservadas";
     $stmt = $pdo->query($sql);
-    $habitaciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $habitacionesR = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
     die("Error de conexión: " . $e->getMessage());
@@ -103,11 +103,6 @@ try {
 </head>
 <body>
 
-<!-- Sección de botones en la parte superior -->
-<div class="header-buttons">
-    <button onclick="location.href='agregar_habitaciones.php'">Agregar Habitación</button>
-    <button onclick="location.href='Habitaciones_Reservadas.php.php'"> Habitaciones reservadas</button>
-</div>
 
 <h2>Listado de Habitaciones</h2>
 
@@ -115,29 +110,25 @@ try {
     <thead>
     <tr>
         <th>N° Habitación</th>
-        <th>Nombre</th>
-        <th>Capacidad</th>
-        <th>Descripción</th>
-        <th>Precio por Noche</th>
+        <th>Nombre del Cliente</th>
+        <th>Correo</th>
+        <th>Fecha entrada</th>
+        <th>Fecha salida</th>
         <th>Ubicación</th>
-        <th>Foto</th>
-        <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
-    <?php if (!empty($habitaciones)): ?>
-        <?php foreach ($habitaciones as $habitacion): ?>
-            <tr id="row-<?= htmlspecialchars($habitacion['numero_habitacion']) ?>">
-                <td><?= htmlspecialchars($habitacion['numero_habitacion']) ?></td>
-                <td><?= htmlspecialchars($habitacion['nombre_habitacion']) ?></td>
-                <td><?= htmlspecialchars($habitacion['numero_personas']) ?></td>
-                <td><?= htmlspecialchars($habitacion['descripcion']) ?></td>
-                <td>$<?= number_format($habitacion['precio_noche'], 2) ?></td>
-                <td><?= htmlspecialchars($habitacion['lugar']) ?></td>
-                <td><img src="<?= htmlspecialchars($habitacion['fotos']) ?>" alt="Foto de la habitación"></td>
+    <?php if (!empty($habitacionesR)): ?>
+        <?php foreach ($habitacionesR as $habitacionesRe): ?>
+            <tr id="row-<?= htmlspecialchars($habitacionesRe['numero_habitacion']) ?>">
+                <td><?= htmlspecialchars($habitacionesRe['nombre_cliente']) ?></td>
+                <td><?= htmlspecialchars($habitacionesRe['email']) ?></td>
+                <td><?= htmlspecialchars($habitacionesRe['fecha_entrada']) ?></td>
+                <td><?= htmlspecialchars($habitacionesRe['fecha_salida']) ?></td>
+                <td><?= htmlspecialchars($habitacionesRe['lugar']) ?></td>
                 <td>
                     <!-- Botón de eliminar que llama a la función JavaScript -->
-                    <button class="delete-btn" onclick="eliminarHabitacion(<?= htmlspecialchars($habitacion['numero_habitacion']) ?>, this)">Eliminar</button>
+                    <button class="delete-btn" onclick="eliminarHabitacion(<?= htmlspecialchars($habitacionesRe['numero_habitacion']) ?>, this)">Eliminar</button>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -150,14 +141,12 @@ try {
 </table>
 
 <script>
-    function eliminarHabitacion(numeroHabitacion, btn) {
+    function eliminarReserva(numeroHabitacion, btn) {
         if (confirm("¿Está seguro que desea eliminar la habitación " + numeroHabitacion + "?")) {
-            // Preparar los datos para enviar por POST
             var formData = new FormData();
             formData.append("numero_habitacion", numeroHabitacion);
 
-            // Enviar la petición AJAX a eliminar_ajax.php
-            fetch("eliminar.php", {
+            fetch("EliminarReserva.php", {
                 method: "POST",
                 body: formData
             })
@@ -165,7 +154,7 @@ try {
                 .then(data => {
                     if(data.success) {
                         alert(data.success);
-                        // Eliminar la fila de la tabla sin recargar la página
+                        
                         var row = btn.parentNode.parentNode;
                         row.parentNode.removeChild(row);
                     } else if(data.error) {
@@ -176,7 +165,7 @@ try {
                 })
                 .catch(error => {
                     console.error("Error:", error);
-                    alert("Ocurrió un error al intentar eliminar la habitación.");
+                    alert("Ocurrió un error al intentar eliminar la reserva.");
                 });
         }
     }
