@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 }
 
 
-if (!isset($_POST['numero_habitacion ']) || !is_numeric($_POST['id_u'])) {
+if (!isset($_POST['numero_habitacion ']) || !is_numeric($_POST['numero_habitacion '])) {
     echo json_encode(["error" => "Los valores ingresados no son válidos."]);
     exit;
 }
