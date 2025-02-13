@@ -71,16 +71,23 @@ $stmt->bind_param("issssss",
 
 
 if ($stmt->execute()) {
-    echo "<h2>Reserva confirmada con éxito.</h2>";
-    echo "<p>Habitación: " . htmlspecialchars($numero_habitacion) . "</p>";
-    echo "<p>Nombre: " . htmlspecialchars($nombre_cliente) . "</p>";
-    echo "<p>Email: " . htmlspecialchars($email_cliente) . "</p>";
-    echo "<p>Fecha de Entrada: " . htmlspecialchars($fecha_entrada) . "</p>";
-    echo "<p>Fecha de Salida: " . htmlspecialchars($fecha_salida) . "</p>";
-    echo "<p>Lugar: " . htmlspecialchars($lugar) . "</p>";
-    echo "<a href='index.php'>Volver al inicio</a>";
+    echo "<div style='background-color: #000; color: #fff; padding: 20px; border-radius: 8px; margin: 20px auto; max-width: 600px; font-family: Arial, sans-serif;'>";
+    echo "<h2 style='text-align: center; border-bottom: 1px solid #fff; padding-bottom: 10px;'>Reserva confirmada con éxito.</h2>";
+    echo "<p><strong>Habitación:</strong> " . htmlspecialchars($numero_habitacion) . "</p>";
+    echo "<p><strong>Nombre:</strong> " . htmlspecialchars($nombre_cliente) . "</p>";
+    echo "<p><strong>Email:</strong> " . htmlspecialchars($email_cliente) . "</p>";
+    echo "<p><strong>Fecha de Entrada:</strong> " . htmlspecialchars($fecha_entrada) . "</p>";
+    echo "<p><strong>Fecha de Salida:</strong> " . htmlspecialchars($fecha_salida) . "</p>";
+    echo "<p><strong>Lugar:</strong> " . htmlspecialchars($lugar) . "</p>";
+    echo "<div style='text-align: center; margin-top: 20px;'>";
+    echo "<a href='index.php' style='color: #fff; text-decoration: none; border: 1px solid #fff; padding: 10px 20px; border-radius: 4px;'>Volver al inicio</a>";
+    echo "</div>";
+    echo "</div>";
 } else {
-    echo "Error al registrar la reserva: " . $stmt->error;
+    echo "<div style='background-color: #000; color: #fff; padding: 20px; border-radius: 8px; margin: 20px auto; max-width: 600px; font-family: Arial, sans-serif;'>";
+    echo "<h2 style='text-align: center; border-bottom: 1px solid #fff; padding-bottom: 10px;'>Error al registrar la reserva:</h2>";
+    echo "<p>" . $stmt->error . "</p>";
+    echo "</div>";
 }
 
 
