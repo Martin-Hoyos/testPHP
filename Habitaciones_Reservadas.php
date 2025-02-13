@@ -128,7 +128,7 @@ try {
                 <td><?= htmlspecialchars($habitacionesRe['lugar']) ?></td>
                 <td>
                     <!-- Botón de eliminar que llama a la función JavaScript -->
-                    <button class="delete-btn" onclick="eliminarHabitacion(<?= htmlspecialchars($habitacionesRe['numero_habitacion']) ?>, this)">Eliminar</button>
+                    <button class="delete-btn" onclick="eliminarReserva(<?= htmlspecialchars($habitacionesRe['numero_habitacion']) ?>, this)">Eliminar</button>
                 </td>
             </tr>
         <?php endforeach; ?>
