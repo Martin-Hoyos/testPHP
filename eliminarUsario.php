@@ -7,13 +7,13 @@ $dbname = "bew3kbjtj9n5faq31kla";
 $dbUser = "ueaxccosiwgfnuo5";
 $dbPassword = "J9d5wTPIyWsgRyXmEJfd";
 
-// Verificar que la petición sea POST
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo json_encode(["error" => "Método no permitido."]);
     exit;
 }
 
-// Validar que se reciba 'numero_habitacion' y que sea numérico
+
 if (!isset($_POST['id_u']) || !is_numeric($_POST['id_u'])) {
     echo json_encode(["error" => "Los valores ingresados no son válidos."]);
     exit;
@@ -27,7 +27,7 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUser, $dbPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Preparar y ejecutar la consulta
+
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":id_u", $idusario, PDO::PARAM_INT);
     $stmt->execute();
