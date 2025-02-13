@@ -14,12 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 }
 
 
-if (!isset($_POST['id_u']) || !is_numeric($_POST['id_u'])) {
+if (!isset($_POST['numero_habitacion ']) || !is_numeric($_POST['id_u'])) {
     echo json_encode(["error" => "Los valores ingresados no son válidos."]);
     exit;
 }
 
-$idusario = (int) $_POST['id_u'];
+$idusario = (int) $_POST['numero_habitacion '];
 $sql = "DELETE FROM Reservadas WHERE numero_habitacion  = :numero_habitacion ";
 
 try {
