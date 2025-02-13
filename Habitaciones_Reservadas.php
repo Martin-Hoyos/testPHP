@@ -109,7 +109,7 @@ try {
 <table>
     <thead>
     <tr>
-        <th>N° Habitacaón</th>
+        <th>N° Habitación</th>
         <th>Nombre del Cliente</th>
         <th>Correo</th>
         <th>Fecha entrada</th>
@@ -122,6 +122,7 @@ try {
     <?php if (!empty($habitacionesR)): ?>
         <?php foreach ($habitacionesR as $habitacionesRe): ?>
             <tr id="row-<?= htmlspecialchars($habitacionesRe['numero_habitacion']) ?>">
+                <td><?= htmlspecialchars($habitacionesRe['numero_habitacion']) ?></td>
                 <td><?= htmlspecialchars($habitacionesRe['nombre_cliente']) ?></td>
                 <td><?= htmlspecialchars($habitacionesRe['email']) ?></td>
                 <td><?= htmlspecialchars($habitacionesRe['fecha_entrada']) ?></td>
