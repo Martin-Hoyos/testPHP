@@ -14,12 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 }
 
 
-if (!isset($_POST['numero_habitacion ']) || !is_numeric($_POST['numero_habitacion '])) {
+if (!isset($_POST['numero_habitacion']) || !is_numeric($_POST['numero_habitacion'])) {
     echo json_encode(["error" => "Los valores ingresados no son válidos."]);
     exit;
 }
 
-$idusario = (int) $_POST['numero_habitacion '];
+$idusario = (int) $_POST['numero_habitacion'];
 $sql = "DELETE FROM Reservadas WHERE numero_habitacion  = :numero_habitacion ";
 
 try {
@@ -27,7 +27,6 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUser, $dbPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Preparar y ejecutar la consulta
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":id_u", $idusario, PDO::PARAM_INT);
     $stmt->execute();
