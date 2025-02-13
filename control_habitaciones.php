@@ -106,7 +106,7 @@ try {
 <!-- Sección de botones en la parte superior -->
 <div class="header-buttons">
     <button onclick="location.href='agregar_habitaciones.php'">Agregar Habitación</button>
-    <button onclick="location.href='Habitaciones_Reservadas.php.php'"> Habitaciones reservadas</button>
+    <button onclick="location.href='Habitaciones_Reservadas.php'"> Habitaciones reservadas</button>
 </div>
 
 <h2>Listado de Habitaciones</h2>

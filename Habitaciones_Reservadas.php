@@ -154,7 +154,7 @@ try {
                 .then(data => {
                     if(data.success) {
                         alert(data.success);
-                        
+
                         var row = btn.parentNode.parentNode;
                         row.parentNode.removeChild(row);
                     } else if(data.error) {
