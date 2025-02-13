@@ -115,6 +115,7 @@ try {
         <th>Fecha entrada</th>
         <th>Fecha salida</th>
         <th>Ubicación</th>
+        <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
