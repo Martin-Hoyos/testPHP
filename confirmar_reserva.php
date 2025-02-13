@@ -63,7 +63,6 @@ $stmt->bind_param("issssss",
     $numero_habitacion,
     $nombre_cliente,
     $email_cliente,
-    $numero_telefono,
     $fecha_entrada,
     $fecha_salida,
     $lugar
