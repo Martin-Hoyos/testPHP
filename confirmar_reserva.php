@@ -53,7 +53,7 @@ $numero_telefono = '';
 
 $sql = "INSERT INTO Reservadas 
         (numero_habitacion, nombre_cliente, email, fecha_entrada, fecha_salida, lugar) 
-        VALUES (?, ?, ?, ?, ?, ?, ?)";
+        VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
     die("Error en la preparación de la consulta: " . $conn->error);
