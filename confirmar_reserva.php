@@ -52,7 +52,7 @@ $numero_telefono = '';
 
 
 $sql = "INSERT INTO Reservadas 
-        (numero_habitacion, nombre_cliente, email, numero_telefono, fecha_entrada, fecha_salida, lugar) 
+        (numero_habitacion, nombre_cliente, email, fecha_entrada, fecha_salida, lugar) 
         VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
