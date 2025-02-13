@@ -36,7 +36,7 @@ $email_cliente = $_SESSION['usuario'];   // Correo del usuario
 $numero_telefono = ''; // O "000000000" si lo prefieres
 
 // Preparar la sentencia SQL para insertar en la tabla "reservas"
-$sql = "INSERT INTO reservas 
+$sql = "INSERT INTO Reservadas 
         (numero_habitacion, nombre_cliente, email, numero_telefono, fecha_entrada, fecha_salida, lugar) 
         VALUES (?, ?, ?, ?, ?, ?, ?)";
 
