@@ -47,16 +47,11 @@ try {
     $stmt = $pdo->prepare("INSERT INTO reservas (numero_habitacion, nombre_cliente, apellidos_cliente, email, numero_telefono, fecha_entrada, fecha_salida, lugar) 
                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $stmt->execute([
-        $habitacion_id,
-        $usuario['nombre'],
-        $usuario['apellidos'],
-        $usuario['email'],
-        $usuario['telefono'],
-        $fechaEntrada,
-        $fechaSalida,
-        $lugar
-    ]);
+    $usuario = $_SESSION['usuario'];
+    $nombre = $usuario['nombre'];
+    $apellidos = $usuario['apellidos'];
+    $email = $usuario['email'];
+    $telefono = $usuario['telefono'];
 
     echo "Reserva confirmada con éxito. <a href='index.php'>Volver al inicio</a>";
 } catch (PDOException $e) {

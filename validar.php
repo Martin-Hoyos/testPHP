@@ -21,11 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Se obtiene la información del usuario
         $row = $result->fetch_assoc();
-        $_SESSION['usuario'] = $email;
-        $_SESSION['nombre'] = $row['nombre']; // Guarda el nombre obtenido de la BD
-        header("Location: index.php"); // Redirige a la página principal (asegúrate de que la extensión sea .php)
+
+        // Guardar todos los datos en un array en $_SESSION
+        $_SESSION['usuario'] = [
+            'id' => $row['id'],
+            'nombre' => $row['nombre'],
+            'apellidos' => $row['apellidos'],
+            'email' => $row['email'],
+            'telefono' => $row['telefono']
+        ];
+
+        header("Location: index.php");
         exit();
     } else {
         echo "<script>alert('Correo o contraseña incorrectos.'); window.location.href='Login.html';</script>";
@@ -34,3 +41,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
+
