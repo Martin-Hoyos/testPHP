@@ -346,3 +346,55 @@ body {
     padding: 5px !important;
     background-color: #fff !important;
 }
+
+.opiniones-recientes {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Título principal */
+.opiniones-recientes h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Contenedor que muestra las tarjetas en fila */
+.contenedor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Separación entre tarjetas */
+}
+
+/* Cada reseña como tarjeta */
+.reseña-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
+    width: calc(25% - 1rem); /* 4 tarjetas por fila, ajusta según tu preferencia */
+    box-sizing: border-box;
+}
+
+/* Nombre de la persona que dejó la reseña */
+.reseña-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Contenedor de estrellas */
+.rating-stars {
+    margin-bottom: 0.5rem;
+}
+
+/* Ajusta el tamaño y separación de las estrellas */
+.star, .star-off {
+    font-size: 1.2rem;
+    margin-right: 3px;
+}
+
+/* Texto del comentario */
+.comentario {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}

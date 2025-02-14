@@ -250,11 +250,7 @@ session_start();
                     </div>
                 </div>
     </section>
-    <div class="section">
-        <h2>Reseñas</h2>
-        <div class="section">
-            <iframe src="mostrarReseñas.php" style="width:100%; border:none;"></iframe>
-        </div>
+    <?php include 'mostrarReseñas.php'; ?>
 
 </main>
 
