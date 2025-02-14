@@ -354,6 +354,7 @@ body {
 /* Título principal */
 .opiniones-recientes h2 {
     margin-bottom: 1rem;
+    align-items: center;
     font-size: 1.5rem;
 }
 
