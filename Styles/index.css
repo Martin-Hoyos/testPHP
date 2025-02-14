@@ -3,9 +3,9 @@
     display: none !important;
 }
 body {
+    font-family: 'Glacial Indifference', sans-serif !important;
     top: 0;
     margin: 0;
-    font-family: Arial, sans-serif;
 }
 /* Ajusta el diseño del selector de idioma */
 #google_translate_element select {

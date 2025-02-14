@@ -274,22 +274,17 @@ session_start();
                 </h2>
                 <ul>
                     <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white"  href="#">
+                        <a class="text-gray-400 hover:text-white"  href="index.php">
                             Home
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white"  href="#">
-                            Sobre nosotros
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white" href="#">
+                        <a class="text-gray-400 hover:text-white" href="servicios.html">
                             Servicios
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white"href="#">
+                        <a class="text-gray-400 hover:text-white"href="Contacto.html">
                             Contacto
                         </a>
                     </li>
@@ -298,27 +293,12 @@ session_start();
             <!-- Latest News Section -->
             <div class="w-full md:w-1/4 mb-6 md:mb-0">
                 <h2 class="text-xl font-bold mb-4">
-                    Latest News
+                    Bella Vista
                 </h2>
                 <ul>
                     <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white"  href="#">
-                            Quienes somos
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white" href="#">
-                            Historia
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white"  href="#">
-                            Sostenibilidad
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-gray-400 hover:text-white"  href="#">
-                            MSV
+                        <a class="text-gray-400 hover:text-white"  href="Reservar.php">
+                            Reservar
                         </a>
                     </li>
                 </ul>
@@ -367,7 +347,7 @@ session_start();
             </div>
             <!-- Logo -->
             <div>
-                <img width="140px" height="70px" alt="Company logo with a simple and elegant design" src="fotos/BELLAVISTA_LOGO_BLANCO.png"/>
+                <img width="140px" height="70px" alt="Company logo with a simple and elegant design" src="Multimedia/BELLAVISTA_LOGO_BLANCO.png"/>
             </div>
         </div>
     </div>

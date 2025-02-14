@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
 body {
-    font-family: 'Glacial Indifference', sans-serif;
+    font-family: 'Glacial Indifference', sans-serif !important;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
