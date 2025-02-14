@@ -22,7 +22,7 @@ if ($conn->connect_error) {
     die("Error en la conexión: " . $conn->connect_error);
 }
 
-// Recibir datos enviados desde el formulario
+
 $numero_habitacion = $_POST['numero_habitacion'] ?? '';
 $lugar             = $_POST['lugar'] ?? '';
 $fecha_entrada     = $_POST['fecha_entrada'] ?? '';
@@ -45,7 +45,7 @@ if ($rowCheck['count'] == 0) {
 }
 $stmtCheck->close();
 
-// Obtener datos del usuario de la sesión
+
 $nombre_cliente = $_SESSION['nombre'];
 $email_cliente  = $_SESSION['usuario'];
 $numero_telefono = '';
