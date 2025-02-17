@@ -25,6 +25,7 @@
     </nav>
 </header>
 <div class="container mx-auto p-4">
+    <br><br><br><br>
     <h2 class="text-2xl font-bold text-gray-700 text-center">Reserva de Habitaciones</h2>
     <form id="buscarHabitaciones" class="mt-4">
         <select name="lugar" id="lugar" required>
