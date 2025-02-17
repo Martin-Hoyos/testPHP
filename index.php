@@ -7,6 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <title>BELLAVISTA</title>
     <link rel="stylesheet" href="Styles/index.css">
+    <link rel="stylesheet" href="Styles/Quienes.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
@@ -81,7 +82,7 @@ session_start();
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="Habitaciones.html">Habitaciones</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
-
+            <li><a href="#" onclick="mostrarTexto(event)">Quiénes somos </a><li>
             <li>
                 <button><span><a href="Reservar.php">Reservar</a></span></button>
             </li>
@@ -100,6 +101,20 @@ session_start();
             <?php endif; ?>
         </ul>
     </nav>
+    <script>
+        function mostrarTexto(e) {
+            e.preventDefault();
+            let formQuienes = document.getElementById("Quienes");
+            formQuienes.style.display = (formQuienes.style.display === "none" || formQuienes.style.display === "") ? "block" : "none";
+        }
+    </script>
+    <div id="Quienes" style="display: none;">
+
+        <h2>¿Quiénes somos?</h2    >
+        <p>En nuestro hotel, estamos comprometidos con el planeta y el futuro el lujo y la sostenibilidad.
+            Creemos firmemente en un modelo de hospitalidad que respeta el entorno y las comunidades locales,
+            ofreciendo a nuestros huéspedes una experiencia única, responsable y consciente con el medio ambiente.</p>
+    </div
 </header>
 
 <!-- Resto de la página -->
