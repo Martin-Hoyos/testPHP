@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <title>BELLAVISTA</title>
     <link rel="stylesheet" href="Styles/index.css">
-    <link rel="stylesheet" href="Styles/Quienes.css">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
