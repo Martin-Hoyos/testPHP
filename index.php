@@ -98,9 +98,23 @@ session_start();
 
             <?php if (isset($_SESSION['usuario'])): ?>
                 <li>
-                    <span><form action="usario.php">
-                            <img src="Multimedia/usuario.png">
-                        </form> </span>
+                    <form action="usuario.php" method="post">
+                        <button type="submit" style="
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            ">
+                            <img src="Multimedia/usuario.png" alt="Usuario" style="
+                    width: 30px;  
+                    height: 30px;
+                    border-radius: 50%;
+                ">
+                        </button>
+                    </form>
                 </li>
                 <li>
                     <a href="Logout.php">Cerrar Sesión</a>
