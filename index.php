@@ -27,14 +27,12 @@ session_start();
                 setTimeout(() => {
                     const combo = document.querySelector('.goog-te-combo');
                     if (combo) {
-                        combo.value = savedLang;      // Seleccionamos el idioma guardado
-                        combo.dispatchEvent(new Event('change')); // Disparamos el cambio
+                        combo.value = savedLang;
+                        combo.dispatchEvent(new Event('change'));
                     }
                 }, 500);
             }
         }
-
-        // Detectar cuando el usuario cambia el idioma en el combo
         document.addEventListener('change', function(e) {
             if (e.target && e.target.classList.contains('goog-te-combo')) {
                 const selectedLang = e.target.value;
@@ -84,9 +82,9 @@ session_start();
             </a>
         </h1>
     </div>
-    <li class="idioms">
+
         <div id="google_translate_element"></div>
-    </li>
+
     <nav>
         <ul>
             <li><a href="index.php">Inicio</a></li>
