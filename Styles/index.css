@@ -370,3 +370,16 @@ text-lg mb-4 {
     font-size: 0.95rem;
     line-height: 1.4;
 }
+
+/* Estiliza el selector de idioma */
+#google_translate_element {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    display: inline-block !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
