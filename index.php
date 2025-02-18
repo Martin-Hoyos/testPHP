@@ -84,7 +84,7 @@ session_start();
             </a>
         </h1>
     </div>
-    <li>
+    <li class="idioms">
         <div id="google_translate_element"></div>
     </li>
     <nav>
