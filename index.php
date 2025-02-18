@@ -97,9 +97,7 @@ session_start();
                 </li>
             <?php endif; ?>
         </ul>
-        <li>
-            <div id="google_translate_element"></div>
-        </li>
+        
     </nav>
     <script>
         function mostrarTexto(e) {
