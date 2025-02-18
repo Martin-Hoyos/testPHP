@@ -382,4 +382,13 @@ text-lg mb-4 {
     display: inline-block !important;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
 }
+/* Oculta la barra superior de Google Translate */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-menu-frame.skiptranslate {
+    display: none !important;
+}
 
+/* Evita que el body se mueva hacia abajo */
+body {
+    top: 0px !important;
+}
