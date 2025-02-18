@@ -392,3 +392,29 @@ text-lg mb-4 {
 body {
     top: 0px !important;
 }
+
+/* Ajusta el tamaño del widget de Google Translate */
+#google_translate_element {
+    font-size: 12px !important; /* Reduce el tamaño de la fuente */
+    padding: 5px !important; /* Reduce el relleno */
+    width: auto !important; /* Ajusta el ancho automáticamente */
+    min-width: 100px !important; /* Establece un ancho mínimo */
+}
+
+/* Ajusta el tamaño del cuadro desplegable */
+.goog-te-gadget {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Ajusta el tamaño del selector de idioma */
+.goog-te-combo {
+    font-size: 12px !important;
+    padding: 3px !important;
+    border-radius: 3px !important;
+    width: 120px !important; /* Ajusta el ancho */
+}
+
