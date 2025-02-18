@@ -18,7 +18,6 @@ echo "<h2>Opiniones recientes</h2>";
 if ($result->num_rows > 0) {
     echo "<div class='contenedor-cards'>";
     while ($row = $result->fetch_assoc()) {
-        // Generar estrellas según puntuación
         $puntuacion = (int)$row["Puntuacion"];
         $maxStars = 5;
         $estrellas = "<div class='rating-stars'>";
@@ -34,16 +33,16 @@ if ($result->num_rows > 0) {
         // Tarjeta de la reseña
         echo "<div class='reseña-card'>";
         echo "<h3>" . htmlspecialchars($row["Nombre"]) . "</h3>";
-        echo $estrellas; // Muestra las estrellas
+        echo $estrellas;
         echo "<p class='comentario'>" . htmlspecialchars($row["Comentario"]) . "</p>";
         echo "</div>";
     }
-    echo "</div>"; // Fin .contenedor-cards
+    echo "</div>";
 } else {
     echo "<p>No hay reseñas aún.</p>";
 }
 
-echo "</div>"; // Fin .opiniones-recientes
+echo "</div>";
 
 $conn->close();
 ?>
