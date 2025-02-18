@@ -98,7 +98,9 @@ session_start();
 
             <?php if (isset($_SESSION['usuario'])): ?>
                 <li>
-                    <span>Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
+                    <span><form action="usario.php">
+                            <img src="Multimedia/usuario.png">
+                        </form> </span>
                 </li>
                 <li>
                     <a href="Logout.php">Cerrar Sesión</a>
