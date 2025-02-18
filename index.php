@@ -96,10 +96,10 @@ session_start();
                     <a href="Login.html">Iniciar Sesión</a>
                 </li>
             <?php endif; ?>
-            <li>
-                <div id="google_translate_element"></div>
-            </li>
         </ul>
+        <li>
+            <div id="google_translate_element"></div>
+        </li>
     </nav>
     <script>
         function mostrarTexto(e) {
