@@ -58,6 +58,18 @@ session_start();
                 .catch(error => console.error('Error al recuperar sesión:', error));
         });
     </script>
+    <script type="text/javascript">
+        function ocultarBarraGoogle() {
+            let frame = document.querySelector(".goog-te-banner-frame");
+            if (frame) {
+                frame.style.display = "none";
+            }
+            document.body.style.top = "0px";
+        }
+
+        // Espera a que la traducción se cargue y oculta la barra
+        setInterval(ocultarBarraGoogle, 1000);
+    </script>
     <!-- Script oficial de Google Translate -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
