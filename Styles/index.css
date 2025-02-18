@@ -309,43 +309,7 @@ text-lg mb-4 {
 /*    BLOQUE PARA EVITAR QUE GOOGLE TRANSLATE MODIFIQUE TU DISEÑO            */
 /* -------------------------------------------------------------------------- */
 
-/* Oculta la barra superior que Google a veces coloca */
-.goog-te-banner-frame.skiptranslate,
-.goog-te-menu-frame.skiptranslate {
-    display: none !important;
-}
 
-/* Evita que el body se mueva hacia abajo */
-body {
-    top: 0 !important;
-}
-
-/* Oculta el ícono de Google en el widget */
-.goog-te-gadget-icon {
-    display: none !important;
-}
-
-/* Evita que cambie la tipografía/tamaño general del widget */
-.goog-te-gadget {
-    font-size: 0 !important;
-    line-height: 0 !important;
-    display: flex !important;       /* Fuerza flexbox */
-    flex-direction: column !important; /* Coloca los elementos en columna */
-    align-items: center !important; /* Centra horizontalmente */
-    justify-content: center !important; /* Centra verticalmente */
-    gap: 8px !important;           /* Espacio entre la etiqueta y el combo */
-}
-
-/* Ajusta el estilo del combo de selección de idioma */
-.goog-te-gadget .goog-te-combo {
-    margin: 0 !important;
-    font-size: 14px !important;
-    color: #000 !important;
-    border-radius: 4px !important;
-    border: 1px solid #ccc !important;
-    padding: 5px !important;
-    background-color: #fff !important;
-}
 .opiniones-recientes {
     font-family: Arial, sans-serif;
     margin: 20px;
