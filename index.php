@@ -72,7 +72,9 @@ session_start();
             </a>
         </h1>
     </div>
-
+    <li>
+        <div id="google_translate_element"></div>
+    </li>
     <nav>
         <ul>
             <li><a href="index.php">Inicio</a></li>
@@ -97,7 +99,7 @@ session_start();
                 </li>
             <?php endif; ?>
         </ul>
-        
+
     </nav>
     <script>
         function mostrarTexto(e) {
