@@ -190,7 +190,7 @@ session_start();
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-spa mr-2"></i>
-                        SPA
+                        Spa
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-glass-martini-alt mr-2"></i>
@@ -202,7 +202,7 @@ session_start();
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-utensils mr-2"></i>
-                        BUFFET
+                        Buffet
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-parking mr-2"></i>
