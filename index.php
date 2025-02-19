@@ -6,6 +6,13 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>BELLAVISTA</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-dN6zFz9i4G43F/xnX5E4CDZ2/v8H2U/ZhZ7NRp9ZXfyE4hNptZbW6bzzdCJuNBzHU94kTn5at3ZrjtX3cBfXCA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="Styles/index.css">
     <link rel="stylesheet" href="Styles/Quienes.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -178,34 +185,32 @@ session_start();
                 </h3>
                 <ul class="space-y-2">
                     <li class="flex items-center">
-                        <i class="fas fa-swimming-pool mr-2">
-                        </i>
-                        Piscina exterior
+                        <i class="fas fa-swimming-pool mr-2"></i>
+                        Piscina
                     </li>
                     <li class="flex items-center">
-                        <i class="fas fa-umbrella-beach mr-2">
-                        </i>
-                        Rooftop
+                        <i class="fas fa-spa mr-2"></i>
+                        SPA
                     </li>
                     <li class="flex items-center">
-                        <i class="fas fa-glass-martini-alt mr-2">
-                        </i>
+                        <i class="fas fa-glass-martini-alt mr-2"></i>
                         Bar
                     </li>
                     <li class="flex items-center">
-                        <i class="fas fa-dumbbell mr-2">
-                        </i>
-                        Centro de fitness
+                        <i class="fas fa-dumbbell mr-2"></i>
+                        Gimnasio
                     </li>
                     <li class="flex items-center">
-                        <i class="fas fa-utensils mr-2">
-                        </i>
-                        Restaurante
+                        <i class="fas fa-utensils mr-2"></i>
+                        BUFFET
                     </li>
                     <li class="flex items-center">
-                        <i class="fas fa-parking mr-2">
-                        </i>
-                        Parking (de pago)
+                        <i class="fas fa-parking mr-2"></i>
+                        Parking
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-theater-masks mr-2"></i>
+                        Espectáculos al aire libre
                     </li>
                 </ul>
             </div>
