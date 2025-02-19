@@ -502,3 +502,7 @@ body {
 .h-button:focus span:nth-child(7) {
     transition-delay: 0.175s;
 }
+.h-button.centered {
+    display: block;
+    margin: 50px auto; /* Ajusta según tu preferencia */
+}
