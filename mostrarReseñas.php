@@ -13,7 +13,7 @@ $sql = "SELECT Nombre, Puntuacion, Comentario FROM Resenas ORDER BY Puntuacion D
 $result = $conn->query($sql);
 
 echo "<div class='opiniones-recientes'>";
-echo "<h2>Opiniones recientes</h2>";
+echo "<h2>Reseñas</h2>";
 
 if ($result->num_rows > 0) {
     echo "<div class='contenedor-cards'>";
@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
         }
         $estrellas .= "</div>";
 
-        // Tarjeta de la reseña
+
         echo "<div class='reseña-card'>";
         echo "<h3>" . htmlspecialchars($row["Nombre"]) . "</h3>";
         echo $estrellas;
