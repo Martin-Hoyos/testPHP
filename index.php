@@ -292,6 +292,16 @@ session_start();
                 </div>
     </section>
     <?php include 'mostrarReseñas.php'; ?>
+    <!-- Botón "Gracias" -->
+    <a aria-label='Thanks' class='h-button centered' data-text='Dejar reseña' href='reseñas.html'>
+        <span>G</span>
+        <span>R</span>
+        <span>A</span>
+        <span>C</span>
+        <span>I</span>
+        <span>A</span>
+        <span>S</span>
+    </a>
 
 </main>
 
