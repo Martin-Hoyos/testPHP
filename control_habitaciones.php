@@ -1,18 +1,15 @@
 <?php
-// habitaciones.php
 
-// Configuración de la conexión a la base de datos
 $host = "bew3kbjtj9n5faq31kla-mysql.services.clever-cloud.com";
 $dbname = "bew3kbjtj9n5faq31kla";
 $dbUsername = "ueaxccosiwgfnuo5";
 $dbPassword = "J9d5wTPIyWsgRyXmEJfd";
 
 try {
-    // Conectar a la base de datos con PDO
+
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUsername, $dbPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Consulta SQL para obtener todas las habitaciones
     $sql = "SELECT numero_habitacion, nombre_habitacion, numero_personas, descripcion, precio_noche, lugar, fotos FROM Habitaciones";
     $stmt = $pdo->query($sql);
     $habitaciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
