@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="Styles/servcios.css">
+  <title>Servicios - BELLAVISTA</title>
+
+  <!-- Tailwind y FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <title>Servicios - BELLAVISTA</title>
+
+  <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap" rel="stylesheet">
 
-  <!-- Script de Google Translate (si lo necesitas) -->
+  <!-- Tus estilos adicionales -->
+  <link rel="stylesheet" href="Styles/servcios.css">
+
+  <!-- Google Translate (opcional) -->
   <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
@@ -38,37 +44,37 @@
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  <!-- Estilos básicos para el modal -->
+  <!-- Estilos básicos para los modales -->
   <style>
-    /* El contenedor del modal (oculto por defecto) */
+    /* Contenedor del modal (oculto por defecto) */
     .modal {
-      display: none; /* oculto por defecto */
-      position: fixed; /* se posiciona fijo en la pantalla */
-      z-index: 999; /* para que quede encima de todo */
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto; /* scroll si es necesario */
-      background-color: rgba(0,0,0,0.4); /* fondo semitransparente */
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4); /* Fondo semitransparente */
     }
 
     /* Contenido interno del modal */
     .modal-content {
       background-color: #fff;
-      margin: 10% auto; /* separa del top y centra horizontalmente */
+      margin: 10% auto;
       padding: 20px;
       border-radius: 8px;
       width: 80%;
-      max-width: 600px; /* ancho máximo para pantallas grandes */
-      position: relative; /* para poder ubicar el botón de cerrar */
+      max-width: 600px;
+      /*position: relative; */
+      position: fixed;
+      top: 20%;
+      left: 34%;
     }
 
     /* Botón de cerrar (X) */
     .close {
       position: absolute;
-      top: 10px;
-      right: 15px;
+      top: 10px; right: 15px;
       color: #333;
       font-size: 28px;
       font-weight: bold;
@@ -78,20 +84,51 @@
     .close:hover {
       color: #666;
     }
+
+    /* Opcional: estilos de tarjetas */
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+      background-color: #fff;
+      margin: 10px;
+    }
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .img-section {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .services, .activities {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .services .card, .activities .card {
+      width: 250px;
+      margin: 1rem;
+      cursor: pointer;
+    }
   </style>
 
-  <!-- Script para abrir/cerrar el modal -->
+  <!-- Script para abrir/cerrar modales -->
   <script>
-    function openModal() {
-      document.getElementById('modalPiscina').style.display = 'block';
+    function openModal(idModal) {
+      document.getElementById(idModal).style.display = 'block';
     }
 
-    function closeModal() {
-      document.getElementById('modalPiscina').style.display = 'none';
+    function closeModal(idModal) {
+      document.getElementById(idModal).style.display = 'none';
     }
   </script>
 </head>
-<body>
+
+<body style="font-family: 'Glacial Indifference', sans-serif;">
 <header class="hidden-header">
   <div class="logo">
     <h1><a href="index.php"><img src="Multimedia/logo_BELLAVIST_blanco.png" alt="LogoMenu"></a></h1>
@@ -109,79 +146,148 @@
     </ul>
   </nav>
 </header>
+
 <br><br><br><br><br><br>
+<!-- Sección de Servicios Destacados -->
 <div class="section">
   <h2>Servicios Destacados</h2>
   <div class="services">
 
-    <!-- TARJETA PISCINA SIN ENLACE, SINO UN CLICK QUE ABRE EL MODAL -->
-    <div class="card button-link" style="cursor: pointer;" onclick="openModal()">
-      <img src="Multimedia/piscinaexterior.jpg" alt="Piscina exterior" class="img-section">
-      <h3>Piscina Exterior</h3>
-      <p>Relájate y disfruta del sol junto a nuestra amplia piscina con vistas impresionantes.</p>
+    <!-- 1) BUFFET -->
+    <div class="card" onclick="openModal('modalBuffet')">
+      <img src="Multimedia/restaurante.jpg" alt="Buffet" class="img-section">
+      <h3>Buffet</h3>
+      <p>Descubre nuestra gran variedad de alimentos preparados con pasión y amor.</p>
+    </div>
+    <!-- Modal Buffet -->
+    <div id="modalBuffet" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalBuffet')">&times;</span>
+        <h2>BUFFET</h2>
+        <p>
+          Contamos con una gran variedad de alimentos preparados por nosotros con mucha pasión, amor y disfrute.
+          Los horarios son:
+        </p>
+        <ul>
+          <li><strong>Desayuno:</strong> 8:00 am a 10:30 am</li>
+          <li><strong>Comida:</strong> 12:30 pm a 15:00 pm</li>
+          <li><strong>Cena:</strong> 19:30 pm a 22:00 pm</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- MODAL CON LA INFORMACIÓN DETALLADA DE LA PISCINA -->
+    <!-- 2) PISCINA -->
+    <div class="card" onclick="openModal('modalPiscina')">
+      <img src="Multimedia/piscinaexterior.jpg" alt="Piscina" class="img-section">
+      <h3>Piscina</h3>
+      <p>Disfruta del sol junto a nuestra piscina en un entorno privilegiado.</p>
+    </div>
+    <!-- Modal Piscina -->
     <div id="modalPiscina" class="modal">
       <div class="modal-content">
-        <!-- Botón para cerrar -->
-        <span class="close" onclick="closeModal()">&times;</span>
-
-        <h2>Piscina</h2>
+        <span class="close" onclick="closeModal('modalPiscina')">&times;</span>
+        <h2>PISCINA</h2>
         <p>
           La piscina, ubicada en un entorno privilegiado, se mimetiza con el paisaje, creando un ambiente de serenidad y elegancia.
+          El diseño, cuidado hasta el más mínimo detalle, se integra a la perfección con la arquitectura del hotel y el entorno natural.
         </p>
         <p>
-          Las tumbonas de diseño ergonómico invitan al descanso, mientras que las camas balinesas ofrecen un espacio más íntimo y exclusivo.
+          Las tumbonas de diseño ergonómico invitan al descanso y la contemplación, mientras que las camas balinesas ofrecen un espacio más íntimo y exclusivo.
+          El servicio de toallas, impecables y suaves, se complementa con la atención personalizada de un equipo de profesionales que se anticipan a tus necesidades.
         </p>
       </div>
     </div>
 
-    <!-- Resto de servicios -->
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/rooftop.jpg" alt="Rooftop"  class="img-section">
-      <h3>Rooftop</h3>
-      <p>Experimenta la vista panorámica desde nuestro rooftop mientras disfrutas de un cóctel.</p>
-    </a>
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/centrofitness.png" alt="Centro de fitness"  class="img-section">
-      <h3>Centro de Fitness</h3>
-      <p>Mantente activo en nuestro gimnasio completamente equipado.</p>
-    </a>
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/restaurante.jpg" alt="Restaurante"  class="img-section">
-      <h3>Restaurante</h3>
-      <p>Degusta platos exquisitos elaborados con ingredientes frescos y locales.</p>
-    </a>
+    <!-- 3) GIMNASIO -->
+    <div class="card" onclick="openModal('modalGimnasio')">
+      <img src="Multimedia/centrofitness.png" alt="Gimnasio" class="img-section">
+      <h3>Gimnasio</h3>
+      <p>Mantente activo en nuestro espacio moderno y funcional.</p>
+    </div>
+    <!-- Modal Gimnasio -->
+    <div id="modalGimnasio" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalGimnasio')">&times;</span>
+        <h2>GIMNASIO</h2>
+        <p>
+          El gimnasio de nuestro hotel está diseñado para ofrecer a nuestros huéspedes un espacio cómodo, moderno y funcional
+          donde puedan mantener su rutina de ejercicio durante su estancia.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4) SPA -->
+    <div class="card" onclick="openModal('modalSpa')">
+      <img src="Multimedia/spa.jpg" alt="SPA" class="img-section">
+      <h3>SPA</h3>
+      <p>Desconecta de la rutina y renueva cuerpo y mente en nuestro spa.</p>
+    </div>
+    <!-- Modal SPA -->
+    <div id="modalSpa" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalSpa')">&times;</span>
+        <h2>SPA</h2>
+        <p>
+          En nuestro hotel, el spa es un santuario dedicado al bienestar, diseñado para ofrecer una experiencia de relajación
+          única en un entorno sereno y lujoso. Perfecto para desconectar de la rutina y renovar cuerpo y mente,
+          nuestro spa combina tratamientos exclusivos con un ambiente acogedor para garantizar su confort y satisfacción.
+        </p>
+      </div>
+    </div>
+
   </div>
 </div>
 
+<!-- Sección de Actividades -->
 <div class="section">
   <h2>Actividades</h2>
   <div class="activities">
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/senderismo.jpg" alt="Senderismo" class="img-section">
-      <h3>Senderismo</h3>
-      <p>Explora rutas naturales que te conectarán con la belleza del entorno.</p>
-    </a>
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/yoga.jpg" alt="Sesiones de yoga" class="img-section">
-      <h3>Sesiones de Yoga</h3>
-      <p>Encuentra tu equilibrio con nuestras sesiones de yoga al aire libre.</p>
-    </a>
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/ciclismo.jpg" alt="Ciclismo" class="img-section">
-      <h3>Ciclismo</h3>
-      <p>Descubre la región en bicicleta con rutas diseñadas para todos los niveles.</p>
-    </a>
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/observacion.jpg" alt="Observación nocturna" class="img-section">
-      <h3>Observación Nocturna</h3>
-      <p>Admira el cielo estrellado en un ambiente tranquilo y único.</p>
-    </a>
+
+    <!-- 5) MASAJES -->
+    <div class="card" onclick="openModal('modalMasajes')">
+      <img src="Multimedia/masajes.jpg" alt="Masajes" class="img-section">
+      <h3>Masajes</h3>
+      <p>Sumérgete en una experiencia sensorial única.</p>
+    </div>
+    <!-- Modal Masajes -->
+    <div id="modalMasajes" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalMasajes')">&times;</span>
+        <h2>MASAJES</h2>
+        <p>
+          Sumérgete en una experiencia sensorial única que fusiona el lujo, la tranquilidad y el cuidado personalizado.
+        </p>
+        <p>
+          Nuestros masajes de lujo están diseñados para equilibrar cuerpo, mente y espíritu, utilizando técnicas tradicionales y
+          contemporáneas aplicadas por terapeutas expertos. Cada tratamiento se realiza con productos naturales y orgánicos,
+          seleccionados cuidadosamente para nutrir tu piel y potenciar tu bienestar.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6) ESPECTÁCULOS AL AIRE LIBRE -->
+    <div class="card" onclick="openModal('modalEspectaculos')">
+      <img src="Multimedia/espectaculos.jpg" alt="Espectáculos al aire libre" class="img-section">
+      <h3>Espectáculos al aire libre</h3>
+      <p>Vive cada noche con shows musicales y temáticos inolvidables.</p>
+    </div>
+    <!-- Modal Espectáculos -->
+    <div id="modalEspectaculos" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalEspectaculos')">&times;</span>
+        <h2>ESPECTÁCULOS AL AIRE LIBRE</h2>
+        <p>
+          En nuestro hotel, cada noche se convierte en una experiencia inolvidable gracias a la variedad de espectáculos nocturnos
+          diseñados para cautivar a nuestros huéspedes. Desde vibrantes actuaciones musicales hasta shows temáticos llenos de creatividad,
+          ofrecemos entretenimiento para todas las edades y gustos.
+        </p>
+      </div>
+    </div>
+
   </div>
 </div>
 
+<!-- Botón "Gracias" -->
 <a aria-label='Thanks' class='h-button centered' data-text='Dejar reseña' href='reseñas.html'>
   <span>G</span>
   <span>R</span>
@@ -192,45 +298,28 @@
   <span>S</span>
 </a>
 
+<!-- Footer -->
 <footer class="py-8" style="background-color: #0c1401;">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap justify-between">
       <!-- Quick Links Section -->
       <div class="w-full md:w-1/4 mb-6 md:mb-0">
-        <h2 class="text-xl font-bold mb-4">
-          Enlaces
-        </h2>
+        <h2 class="text-xl font-bold mb-4">Enlaces</h2>
         <ul>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="index.php">Inicio</a>
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="servicios.html">Servicios</a>
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="Contacto.html">Contacto</a>
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="Habitaciones.html">Habitaciones</a>
-          </li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="index.php">Inicio</a></li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="servicios.html">Servicios</a></li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="Contacto.html">Contacto</a></li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="Habitaciones.html">Habitaciones</a></li>
         </ul>
       </div>
       <!-- Latest News Section -->
       <div class="w-full md:w-1/4 mb-6 md:mb-0">
         <h2 class="text-xl font-bold mb-4">Bella Vista</h2>
         <ul>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="Reservar.php">Reservar</a>
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="suitQueen.html">Suite Queen</a>
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="SuitKing.html">Suite King</a>
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="SUITEKINGBALCÓN.html">Suite King De lujo</a>
-          </li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="Reservar.php">Reservar</a></li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="suitQueen.html">Suite Queen</a></li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="SuitKing.html">Suite King</a></li>
+          <li class="mb-2"><a class="text-gray-400 hover:text-white" href="SUITEKINGBALCÓN.html">Suite King De lujo</a></li>
         </ul>
       </div>
       <!-- Contact Us Section -->
@@ -253,22 +342,14 @@
     <div class="flex justify-between items-center mt-8">
       <!-- Social Media Links -->
       <div>
-        <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+        <a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-twitter"></i></a>
+        <a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="text-gray-400 hover:text-white" href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <!-- Logo -->
       <div>
-        <img width="140px" height="70px" alt="Company logo with a simple and elegant design" src="Multimedia/BELLAVISTA_LOGO_BLANCO.png"/>
+        <img width="140px" height="70px" alt="Company logo" src="Multimedia/BELLAVISTA_LOGO_BLANCO.png"/>
       </div>
     </div>
   </div>
