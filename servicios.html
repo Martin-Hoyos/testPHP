@@ -41,7 +41,19 @@
 
   <!-- Script oficial de Google Translate -->
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!--Funcion para las ventanas -->
+  <script>
+    function showTooltip(event) {
+      let tooltip = document.getElementById("tooltipPiscina");
+      tooltip.style.display = "block";
+      tooltip.style.left = event.pageX + 10 + "px";
+      tooltip.style.top = event.pageY + 10 + "px";
+    }
 
+    function hideTooltip() {
+      document.getElementById("tooltipPiscina").style.display = "none";
+    }
+  </script>
 </head>
 <body>
 <header class="hidden-header">
@@ -70,6 +82,11 @@
       <h3>Piscina Exterior</h3>
       <p>Relájate y disfruta del sol junto a nuestra amplia piscina con vistas impresionantes.</p>
     </a>
+    <div id="tooltipPiscina" class="tooltip">
+      <h2>Piscina</h2>
+      <p>La piscina, ubicada en un entorno privilegiado, se mimetiza con el paisaje, creando un ambiente de serenidad y elegancia.</p>
+      <p>Las tumbonas de diseño ergonómico invitan al descanso, mientras que las camas balinesas ofrecen un espacio más íntimo.</p>
+    </div>
     <a href="prueba.html" class="card button-link">
       <img src="Multimedia/rooftop.jpg" alt="Rooftop"  class="img-section">
       <h3>Rooftop</h3>
@@ -113,13 +130,6 @@
     </a>
   </div>
 </div>
-
-  
-  <div class="section">
-    <h2>Reseñas</h2>
-    <div class="section">
-      <iframe src="mostrarReseñas.php" style="width:100%; border:none;"></iframe>
-    </div>
 
     <a aria-label='Thanks' class='h-button centered' data-text='Dejar reseña' href='reseñas.html'>
       <span>G</span>
