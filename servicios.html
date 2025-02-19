@@ -7,8 +7,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <title>Servicios - BELLAVISTA</title>
   <link href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap" rel="stylesheet">
+
+  <!-- Script de Google Translate (si lo necesitas) -->
   <script>
-    // Esta función la llama automáticamente el script de Google al inicializarse
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'es',
@@ -16,21 +17,18 @@
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
 
-      // Re-aplicar el idioma guardado (si existe)
       const savedLang = localStorage.getItem('selectedLanguage');
       if (savedLang) {
-        // Esperamos un breve tiempo para que se cargue el traductor
         setTimeout(() => {
           const combo = document.querySelector('.goog-te-combo');
           if (combo) {
-            combo.value = savedLang;      // Seleccionamos el idioma guardado
-            combo.dispatchEvent(new Event('change')); // Disparamos el cambio
+            combo.value = savedLang;
+            combo.dispatchEvent(new Event('change'));
           }
         }, 500);
       }
     }
 
-    // Detectar cuando el usuario cambia el idioma en el combo
     document.addEventListener('change', function(e) {
       if (e.target && e.target.classList.contains('goog-te-combo')) {
         const selectedLang = e.target.value;
@@ -38,20 +36,58 @@
       }
     });
   </script>
-
-  <!-- Script oficial de Google Translate -->
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <!--Funcion para las ventanas -->
-  <script>
-    function showTooltip(event) {
-      let tooltip = document.getElementById("tooltipPiscina");
-      tooltip.style.display = "block";
-      tooltip.style.left = event.pageX + 10 + "px";
-      tooltip.style.top = event.pageY + 10 + "px";
+
+  <!-- Estilos básicos para el modal -->
+  <style>
+    /* El contenedor del modal (oculto por defecto) */
+    .modal {
+      display: none; /* oculto por defecto */
+      position: fixed; /* se posiciona fijo en la pantalla */
+      z-index: 999; /* para que quede encima de todo */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; /* scroll si es necesario */
+      background-color: rgba(0,0,0,0.4); /* fondo semitransparente */
     }
 
-    function hideTooltip() {
-      document.getElementById("tooltipPiscina").style.display = "none";
+    /* Contenido interno del modal */
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto; /* separa del top y centra horizontalmente */
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 600px; /* ancho máximo para pantallas grandes */
+      position: relative; /* para poder ubicar el botón de cerrar */
+    }
+
+    /* Botón de cerrar (X) */
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: #333;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #666;
+    }
+  </style>
+
+  <!-- Script para abrir/cerrar el modal -->
+  <script>
+    function openModal() {
+      document.getElementById('modalPiscina').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modalPiscina').style.display = 'none';
     }
   </script>
 </head>
@@ -77,16 +113,31 @@
 <div class="section">
   <h2>Servicios Destacados</h2>
   <div class="services">
-    <a href="prueba.html" class="card button-link">
-      <img src="Multimedia/piscinaexterior.jpg" alt="Piscina exterior"  class="img-section">
+
+    <!-- TARJETA PISCINA SIN ENLACE, SINO UN CLICK QUE ABRE EL MODAL -->
+    <div class="card button-link" style="cursor: pointer;" onclick="openModal()">
+      <img src="Multimedia/piscinaexterior.jpg" alt="Piscina exterior" class="img-section">
       <h3>Piscina Exterior</h3>
       <p>Relájate y disfruta del sol junto a nuestra amplia piscina con vistas impresionantes.</p>
-    </a>
-    <div id="tooltipPiscina" class="tooltip">
-      <h2>Piscina</h2>
-      <p>La piscina, ubicada en un entorno privilegiado, se mimetiza con el paisaje, creando un ambiente de serenidad y elegancia.</p>
-      <p>Las tumbonas de diseño ergonómico invitan al descanso, mientras que las camas balinesas ofrecen un espacio más íntimo.</p>
     </div>
+
+    <!-- MODAL CON LA INFORMACIÓN DETALLADA DE LA PISCINA -->
+    <div id="modalPiscina" class="modal">
+      <div class="modal-content">
+        <!-- Botón para cerrar -->
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Piscina</h2>
+        <p>
+          La piscina, ubicada en un entorno privilegiado, se mimetiza con el paisaje, creando un ambiente de serenidad y elegancia.
+        </p>
+        <p>
+          Las tumbonas de diseño ergonómico invitan al descanso, mientras que las camas balinesas ofrecen un espacio más íntimo y exclusivo.
+        </p>
+      </div>
+    </div>
+
+    <!-- Resto de servicios -->
     <a href="prueba.html" class="card button-link">
       <img src="Multimedia/rooftop.jpg" alt="Rooftop"  class="img-section">
       <h3>Rooftop</h3>
@@ -131,19 +182,15 @@
   </div>
 </div>
 
-    <a aria-label='Thanks' class='h-button centered' data-text='Dejar reseña' href='reseñas.html'>
-      <span>G</span>
-      <span>R</span>
-      <span>A</span>
-      <span>C</span>
-      <span>I</span>
-      <span>A</span>
-      <span>S</span>
-    </a>
-
-
-  </div>
-</div>
+<a aria-label='Thanks' class='h-button centered' data-text='Dejar reseña' href='reseñas.html'>
+  <span>G</span>
+  <span>R</span>
+  <span>A</span>
+  <span>C</span>
+  <span>I</span>
+  <span>A</span>
+  <span>S</span>
+</a>
 
 <footer class="py-8" style="background-color: #0c1401;">
   <div class="container mx-auto px-4">
@@ -155,74 +202,51 @@
         </h2>
         <ul>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white"  href="index.php">
-              Inicio
-            </a>
+            <a class="text-gray-400 hover:text-white" href="index.php">Inicio</a>
           </li>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white" href="servicios.html">
-              Servicios
-            </a>
+            <a class="text-gray-400 hover:text-white" href="servicios.html">Servicios</a>
           </li>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white"href="Contacto.html">
-              Contacto
-            </a>
+            <a class="text-gray-400 hover:text-white" href="Contacto.html">Contacto</a>
           </li>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white"href="Habitaciones.html">
-              Habitaciones
-            </a>
+            <a class="text-gray-400 hover:text-white" href="Habitaciones.html">Habitaciones</a>
           </li>
         </ul>
       </div>
       <!-- Latest News Section -->
       <div class="w-full md:w-1/4 mb-6 md:mb-0">
-        <h2 class="text-xl font-bold mb-4">
-          Bella Vista
-        </h2>
+        <h2 class="text-xl font-bold mb-4">Bella Vista</h2>
         <ul>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white"  href="Reservar.php">
-              Reservar
-            </a>
+            <a class="text-gray-400 hover:text-white" href="Reservar.php">Reservar</a>
           </li>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white"  href="suitQueen.html">
-              Suite Queen
-            </a>
+            <a class="text-gray-400 hover:text-white" href="suitQueen.html">Suite Queen</a>
           </li>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white"  href="SuitKing.html">
-              Suite King
-            </a>
+            <a class="text-gray-400 hover:text-white" href="SuitKing.html">Suite King</a>
           </li>
           <li class="mb-2">
-            <a class="text-gray-400 hover:text-white"  href="SUITEKINGBALCÓN.html">
-              Suite King De lujo
-            </a>
+            <a class="text-gray-400 hover:text-white" href="SUITEKINGBALCÓN.html">Suite King De lujo</a>
           </li>
         </ul>
       </div>
       <!-- Contact Us Section -->
       <div class="w-full md:w-1/4 mb-6 md:mb-0">
-        <h2 class="text-xl font-bold mb-4">
-          Contact Us
-        </h2>
-        <p class="text-gray-400 hover:text-white"ver:text-white" >
-        <i class="fas fa-map-marker-alt mr-2">
-        </i>
-        1234 Street Name, City, State, 12345
+        <h2 class="text-xl font-bold mb-4">Contact Us</h2>
+        <p class="text-gray-400 hover:text-white">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          1234 Street Name, City, State, 12345
         </p>
-        <p class="text-gray-400 hover:text-white"ver:text-white"  >
-        <i class="fas fa-phone-alt mr-2">
-        </i>
-        (+34) 666-666-666
+        <p class="text-gray-400 hover:text-white">
+          <i class="fas fa-phone-alt mr-2"></i>
+          (+34) 666-666-666
         </p>
-        <p class="text-gray-400 hover:text-white"ver:text-white" >
-        <i class="fas fa-envelope mr-2">
-        </i>
-        BellaVista@info.com
+        <p class="text-gray-400 hover:text-white">
+          <i class="fas fa-envelope mr-2"></i>
+          BellaVista@info.com
         </p>
       </div>
     </div>
@@ -230,20 +254,16 @@
       <!-- Social Media Links -->
       <div>
         <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-facebook-f">
-          </i>
+          <i class="fab fa-facebook-f"></i>
         </a>
         <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-twitter">
-          </i>
+          <i class="fab fa-twitter"></i>
         </a>
         <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-instagram">
-          </i>
+          <i class="fab fa-instagram"></i>
         </a>
         <a class="text-gray-400 hover:text-white" href="#">
-          <i class="fab fa-linkedin-in">
-          </i>
+          <i class="fab fa-linkedin-in"></i>
         </a>
       </div>
       <!-- Logo -->
