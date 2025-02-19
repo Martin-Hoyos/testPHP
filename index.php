@@ -299,17 +299,6 @@ session_start();
 <footer class="py-8" style="background-color: #0c1401;">
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap justify-between">
-            <!-- About Us Section -->
-            <div class="w-full md:w-1/4 mb-6 md:mb-0">
-                <h2 class="text-xl font-bold mb-4">
-                    Quiénes somos
-                </h2>
-                <p class="text-gray-400">
-                    En nuestro hotel, estamos comprometidos con el planeta y el futuro el lujo y la sostenibilidad.
-                    Creemos firmemente en un modelo de hospitalidad que respeta el entorno y las comunidades locales,
-                    ofreciendo a nuestros huéspedes una experiencia única, responsable y consciente con el medio ambiente.
-                </p>
-            </div>
             <!-- Quick Links Section -->
             <div class="w-full md:w-1/4 mb-6 md:mb-0">
                 <h2 class="text-xl font-bold mb-4">
