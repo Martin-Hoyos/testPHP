@@ -30,7 +30,7 @@ $checkStmt->execute([$email]);
 
 if ($checkStmt->rowCount() > 0) {
 
-    header("Location: registrar.php?error=email_exists");
+    header("Location: Login.html?error=email_exists");
     exit;
 }
 
