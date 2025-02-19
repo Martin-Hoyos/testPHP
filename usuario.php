@@ -85,6 +85,7 @@ try {
         }
     </style>
 </head>
+<a href="javascript:history.back()" class="back-button">Regresar Atrás</a>
 <body>
 <h2>Reservas de <?php echo $_SESSION['nombre']; ?></h2>
 
