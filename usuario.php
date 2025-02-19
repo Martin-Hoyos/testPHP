@@ -56,7 +56,6 @@ try {
     <tr>
         <th>Número de Habitación</th>
         <th>Nombre del Cliente</th>
-        <th>Email</th>
         <th>Fecha de Entrada</th>
         <th>Fecha de Salida</th>
         <th>Lugar</th>
