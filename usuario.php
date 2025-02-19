@@ -55,7 +55,6 @@ try {
 <table>
     <tr>
         <th>Número de Habitación</th>
-        <th>Nombre del Cliente</th>
         <th>Fecha de Entrada</th>
         <th>Fecha de Salida</th>
         <th>Lugar</th>
@@ -63,7 +62,6 @@ try {
     <?php foreach ($habitaciones as $habitacion): ?>
         <tr>
             <td><?php echo htmlspecialchars($habitacion['numero_habitacion']); ?></td>
-            <td><?php echo htmlspecialchars($habitacion['nombre_cliente']); ?></td>
             <td><?php echo htmlspecialchars($habitacion['fecha_entrada']); ?></td>
             <td><?php echo htmlspecialchars($habitacion['fecha_salida']); ?></td>
             <td><?php echo htmlspecialchars($habitacion['lugar']); ?></td>
