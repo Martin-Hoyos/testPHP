@@ -318,7 +318,7 @@ session_start();
                 <ul>
                     <li class="mb-2">
                         <a class="text-gray-400 hover:text-white"  href="index.php">
-                            Home
+                            Inicio
                         </a>
                     </li>
                     <li class="mb-2">
@@ -329,6 +329,11 @@ session_start();
                     <li class="mb-2">
                         <a class="text-gray-400 hover:text-white"href="Contacto.html">
                             Contacto
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-gray-400 hover:text-white"href="Habitaciones.html">
+                            Habitaciones
                         </a>
                     </li>
                 </ul>
@@ -342,6 +347,21 @@ session_start();
                     <li class="mb-2">
                         <a class="text-gray-400 hover:text-white"  href="Reservar.php">
                             Reservar
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-gray-400 hover:text-white"  href="suitQueen.html">
+                            Suite Queen
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-gray-400 hover:text-white"  href="SuitKing.html">
+                            Suite King
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-gray-400 hover:text-white"  href="SUITEKINGBALCÓN.html">
+                            Suite King De lujo
                         </a>
                     </li>
                 </ul>
