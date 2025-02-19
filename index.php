@@ -109,7 +109,7 @@ session_start();
                 justify-content: center;
             ">
                             <img src="Multimedia/usuario.png" alt="Usuario" style="
-                    width: 30px;  
+                    width: 30px;
                     height: 30px;
                     border-radius: 50%;
                 ">
@@ -230,7 +230,7 @@ session_start();
                     </span>
                         </div>
                         <h2 class="text-white text-xl font-bold">
-                            SUITE QUEEN de lujo
+                            SUITE QUEEN DE LUJO
                         </h2>
                         <div class="flex space-x-2 mt-2">
                             <button class="bg-transparent border border-white text-white py-1 px-4">
@@ -254,7 +254,7 @@ session_start();
                     </span>
                         </div>
                         <h2 class="text-white text-xl font-bold">
-                            SUITE KING de Lujo
+                            SUITE KING DE LUJO
                         </h2>
                         <div class="flex space-x-2 mt-2">
                             <button class="bg-transparent border border-white text-white py-1 px-4">
@@ -278,7 +278,7 @@ session_start();
                     </span>
                         </div>
                         <h2 class="text-white text-xl font-bold">
-                            SUITE KING de Lujo + BALCON
+                            SUITE KING DE LUJO + BALCÓN
                         </h2>
                         <div class="flex space-x-2 mt-2">
                             <button class="bg-transparent border border-white text-white py-1 px-4">
