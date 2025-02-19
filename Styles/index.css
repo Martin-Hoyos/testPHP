@@ -342,7 +342,7 @@ text-lg mb-4 {
     border-radius: 6px;
     padding: 1.5rem;
     box-sizing: border-box;
-    width: 100%; /* Aprovechar todo el ancho */
+    width: 130%; /* Aprovechar todo el ancho */
     text-align: left; /* Mantener alineación del texto */
 }
 /* Nombre de la persona que dejó la reseña */
